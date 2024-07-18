@@ -1,4 +1,4 @@
-package com.codechen.doc;
+package com.codechen.library;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
