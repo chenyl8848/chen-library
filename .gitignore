@@ -1,7 +1,7 @@
 .DS_Store
 node_modules
 dist
-/chen-doc-web/.history/
+/chen-library-ui/.history/
 
 # local env files
 .env.local
@@ -21,4 +21,4 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
-/chen-doc-core/target/
+/chen-library-ui/target/
