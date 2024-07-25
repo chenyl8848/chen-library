@@ -5,6 +5,10 @@
     float: left;
 }
 
+.float-right {
+    float: right;
+}
+
 .mgt-20px {
     margin-top: 20px;
 }
@@ -12,4 +16,20 @@
 .help-block {
     color: #888;
     font-size: 15px;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-muted {
+    color: #bdc3c7;
+}
+
+.el-card__header {
+    font-weight: bold;
 }

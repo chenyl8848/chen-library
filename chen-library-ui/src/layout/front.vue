@@ -77,14 +77,14 @@ import FrontFooter from '@/components/FrontFooter.vue'
     font-weight: normal;
   }
 
-  padding-top: 60px;
+  // padding-top: 60px;
 
   .el-card {
     border-radius: 5px;
     border: 0;
   }
 
-  .user-center {
+  .nav-user-center {
     &.is-active {
       border-color: transparent !important;
     }
@@ -96,11 +96,16 @@ import FrontFooter from '@/components/FrontFooter.vue'
       font-size: 1.2em;
       margin-top: -8px;
 
-      .user-avatar {
+      .nav-user-avatar {
         position: relative;
         top: -2px;
       }
     }
+  }
+
+  .el-footer {
+    padding: 0;
+    background-color: #ffffff;
   }
 }
 
