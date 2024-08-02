@@ -26,7 +26,7 @@
                                 index="/category" class="hidden-xs-only">
                                 <el-popover ref="popover0" width="520" trigger="hover" :show-after="600"
                                     :disabled="categoryStore.categories.filter((x) => !x.type).length === 0">
-                                    <category-card></category-card>
+                                    <category-card :type="0"></category-card>
                                     <template #reference>
                                         <router-link to="/category">{{ item.title || '文库资料' }}</router-link>
                                     </template>
@@ -36,7 +36,7 @@
                                 index="/article" class="hidden-xs-only">
                                 <el-popover ref="popover1" width="520" trigger="hover" :show-after="600"
                                     :disabled="categoryStore.categories.filter((x) => x.type === 1).length === 0">
-                                    <category-card></category-card>
+                                    <category-card :type="1"></category-card>
                                     <template #reference>
                                         <router-link to="/article">{{ item.title || '文章资讯' }}</router-link>
                                     </template>
@@ -157,6 +157,8 @@ const handleCommand = (command) => {
 
 <style lang="scss">
 .front-header {
+    height: 60px;
+
     .el-header {
         padding: 0;
         background: #fff;

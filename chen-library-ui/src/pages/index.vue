@@ -60,7 +60,7 @@
                         <el-col v-for="(item, index) in recommendDocuments" :key="`recommend-document-${item.id}`"
                             :span="4" :class="index > 7 ? 'hidden-xs-only' : ''">
                             <el-tooltip class="item" effect="dark" :content="item.title" placement="top">
-                                <router-link :to="`/document/${item.uuid}`" target="_blank">
+                                <router-link :to="`/document?document_id=${item.uuid}`" target="_blank">
                                     <document-cover :document="item" />
                                     <div class="el-link el-link--default">{{ item.title }}</div>
                                 </router-link>
@@ -188,7 +188,7 @@
                         <el-card class="box-card" shadow="never">
                             <template #header>
                                 <div class="clearfix">
-                                    <router-link :to="`/category/${category.id}`" target="_blank"
+                                    <router-link :to="`/category?category_id=${category.id}`" target="_blank"
                                         class="el-link el-link--default">
                                         <img :src="category.icon || '@/assets/images/logo-icon.png'"
                                             :alt="category.title" class="category-icon" />
@@ -196,7 +196,7 @@
                                     </router-link>
                                 </div>
                             </template>
-                            <router-link v-for="item in category.children" :to="`/category/${item.id}`"
+                            <router-link v-for="item in category.children" :to="`/category?category_id=${item.id}`"
                                 :key="`category-child-${item.id}`" class="el-link el-link--default">
                                 {{ item.title }}
                             </router-link>
@@ -214,14 +214,14 @@
                             <strong>
                                 {{ item.category_name }}
                             </strong>
-                            <router-link :to="`/category/${item.category_id}`" target="_blank" class="float-right">
+                            <router-link :to="`/category?category_id=${item.category_id}`" target="_blank" class="float-right">
                                 <el-button link type="primary">更多</el-button>
                             </router-link>
                         </div>
                     </template>
                     <div>
                         <div class="card-body-left hidden-xs-only">
-                            <router-link :to="`/category/${item.category_id}`" target="_blank">
+                            <router-link :to="`/category?category_id=${item.category_id}`" target="_blank">
                                 <el-image lazy class="category-cover" :src="item.category_cover">
                                     <template #error>
                                         <div class="image-slot">
@@ -235,7 +235,7 @@
                         <div class="card-body-right">
                             <router-link v-for="(doc, index) in item.document" :key="`document-${doc.id}`"
                                 v-show="index < 5" class="el-link el-link--default" target="_blank"
-                                :to="`/document/${doc.uuid}`">
+                                :to="`/document?document_id=${doc.uuid}`">
                                 <!-- <img :src="`/static/images/${getIcon(doc.ext)}_24.png`"
                                     :alt="`${getIcon(doc.ext)}文档`" /> -->
                                 <!-- <img :src="`/static/images/${getIcon(doc.ext)}_24.png`"
@@ -259,7 +259,7 @@ import useUserStore from '@/store/module/user'
 import useCategoryStore from '@/store/module/category'
 import { computed, ref } from 'vue'
 import { Search } from '@element-plus/icons-vue'
-import { articleList, recommendDocumentList, documentList } from '../../mock/data'
+import { articleList, recommendDocumentList, frontDocumentList } from '../../mock/data'
 
 const settingStore = useSettingStore()
 const userStore = useUserStore()
@@ -297,7 +297,7 @@ const categoryTreesV2 = computed(() => {
 })
 
 const documents = ref([])
-documents.value = documentList
+documents.value = frontDocumentList
 </script>
 
 <style lang="scss">
