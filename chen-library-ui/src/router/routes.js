@@ -28,6 +28,11 @@ export default [
                 path: '/search',
                 component: () => import('@/pages/search/index.vue')
             },
+            {
+                path: '/user',
+                component: () => import('@/pages/user/index.vue')
+            },
+
         ]
     },
     {

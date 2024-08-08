@@ -8,7 +8,9 @@
                             <el-breadcrumb-item :to="{ path: '/' }">
                                 <el-icon>
                                     <HomeFilled />
-                                </el-icon>首页</el-breadcrumb-item>
+                                </el-icon>
+                                首页
+                            </el-breadcrumb-item>
                             <el-breadcrumb-item :to="{ path: '/category' }">全部文档</el-breadcrumb-item>
                             <el-breadcrumb-item v-for="item in breadcrumbs" :key="`breadcrumb-${item.id}`">
                                 <el-dropdown class="breadcrumb-dropdown" v-if="item.brother && item.brother.length > 0">
