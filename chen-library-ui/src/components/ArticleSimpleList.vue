@@ -3,7 +3,7 @@
         <ul>
             <li v-for="item in articles" :key="`article-${item.id}`">
                 <el-tooltip placement="left" :title="item.title" trigger="hover" effect="dark" :content="item.title">
-                    <router-link :to="`/article/${item.identifier}`" target="_blank" class="el-link el-link--default">
+                    <router-link :to="`/article?articleId=${item.identifier}`" target="_blank" class="el-link el-link--default">
                         {{ item.title }}
                     </router-link>
                 </el-tooltip>

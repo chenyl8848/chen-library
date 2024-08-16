@@ -3,7 +3,7 @@
         <div v-for="item in categoryTree" :key="`category-${item.id}`" class="row"
             :class="level === 1 ? 'row-line' : ''">
             <div class="lv1">
-                <router-link :to="`${item.type === 1 ?  '/article?category_id=' + item.id : '/category?category_id=' + item.id}`"
+                <router-link :to="`${item.type === 1 ?  '/category/article?categoryId=' + item.id : '/category/document?categoryId=' + item.id}`"
                     class="el-link el-link--default">
                     <el-avatar :size="20" :src="item.icon"></el-avatar>
                     <span>{{ item.title }}</span>
@@ -12,7 +12,7 @@
             <div class="lv2">
                 <router-link v-for="sub in (item.children || []).filter((x) => x.enable)"
                     :key="`category-sub-${sub.id}`"
-                    :to="`${sub.type === 1 ? '/article?category_id=' + sub.id : '/category?category_id=' + sub.id}`"
+                    :to="`${sub.type === 1 ? '/category/article?categoryId=' + sub.id : '/category/document?categoryId=' + sub.id}`"
                     class="el-link el-link--default">
                     {{ sub.title }}
                 </router-link>

@@ -9,16 +9,28 @@ export default [
                 component: () => import('@/pages/index.vue')
             },
             {
-                path: '/category',
-                component: () => import('@/pages/category/index.vue')
+                path: '/category/document',
+                component: () => import('@/pages/category/document.vue')
+            },
+            {
+                path: '/category/article',
+                component: () => import('@/pages/category/article.vue')
             },
             {
                 path: '/document',
                 component: () => import('@/pages/document/index.vue')
             },
             {
+                path: '/upload',
+                component: () => import('@/pages/upload/index.vue')
+            },
+            {
                 path: '/article',
                 component: () => import('@/pages/article/index.vue')
+            },
+            {
+                path: '/post',
+                component: () => import('@/pages/post/index.vue')
             },
             {
                 path: '/joinvip',

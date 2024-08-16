@@ -1,5 +1,5 @@
 <template>
-    <div class="page page-category">
+    <div class="page page-category-document">
         <el-row>
             <el-col :span="24">
                 <el-card ref="breadcrumb" shadow="never">
@@ -24,7 +24,7 @@
                                         <el-dropdown-menu>
                                             <el-dropdown-item v-for="menu in item.brother"
                                                 :key="`dropdown-menu-${menu.id}`">
-                                                <router-link :to="`category?category_id=${menu.id}`"
+                                                <router-link :to="`/category/document?categoryId=${menu.id}`"
                                                     class="el-link el-link--default block" :class="{
                                                         'el-link--primary': menu.id === item.id,
                                                     }">
@@ -51,7 +51,7 @@
                                 placement="top-start" :title="child.title" width="200" trigger="hover"
                                 :disabled="!child.description" :content="child.description">
                                 <template #reference>
-                                    <router-link :to="`/category?category_id=${child.id}`" :title="child.title"
+                                    <router-link :to="`/category/document?categoryId=${child.id}`" :title="child.title"
                                         class="el-link el-link--default">{{ child.title }}</router-link>
                                 </template>
                             </el-popover>
@@ -190,9 +190,10 @@ import DocumentListSkeleton from '@/components/DocumentListSkeleton.vue'
 import DocumentList from '@/components/DocumentList.vue'
 
 const $route = useRoute()
-const catetoryStore = useCategoryStore()
+let categoryId = $route.query.categoryId
+
+const categoryStore = useCategoryStore()
 const settingStore = useSettingStore()
-let categoryId = $route.query.category_id
 
 const breadcrumbs = ref([])
 const categoryChildren = ref([])
@@ -214,7 +215,7 @@ const feeTypeOptions = ref([
 const getCategorys = () => {
     if (categoryId) {
         // 获取当前分类
-        const currentCategory = catetoryStore.categories.filter((item) => item.id === Number(categoryId))[0]
+        const currentCategory = categoryStore.categories.filter((item) => item.id === Number(categoryId))[0]
         if (currentCategory) {
             // 0、清空面包屑
             breadcrumbs.value.splice(0, breadcrumbs.value.length)
@@ -227,7 +228,7 @@ const getCategorys = () => {
             // 2、查询父级分类的兄弟分类
             const parentId = currentCategory.parent_id
             if (parentId) {
-                const parentCategory = catetoryStore.categories.filter((item) => item.id === parentId)[0]
+                const parentCategory = categoryStore.categories.filter((item) => item.id === parentId)[0]
                 if (parentCategory) {
                     const parentBrotherCategory = filterCategoryBrothers(parentCategory)
                     parentCategory.brother = parentBrotherCategory
@@ -256,7 +257,7 @@ const getCategorys = () => {
 
 const filterCategoryBrothers = (category) => {
     try {
-        return catetoryStore.categories.filter((x) => {
+        return categoryStore.categories.filter((x) => {
             if (
                 settingStore.display &&
                 settingStore.display.hide_category_without_document
@@ -273,7 +274,7 @@ const filterCategoryBrothers = (category) => {
 
 const filterCategoryChildrens = (category) => {
     try {
-        return catetoryStore.categories.filter((x) => {
+        return categoryStore.categories.filter((x) => {
             if (
                 settingStore.display &&
                 settingStore.display.hide_category_without_document
@@ -290,7 +291,7 @@ const filterCategoryChildrens = (category) => {
 
 const filterFirstCategory = () => {
     try {
-        return catetoryStore.categories.filter((x) => {
+        return categoryStore.categories.filter((x) => {
             if (
                 settingStore.display &&
                 settingStore.display.hide_category_without_document
@@ -351,9 +352,9 @@ const getDocuments = () => {
 
 const setQuery = (queryParams) => {
     console.log("setQuery")
-    if (queryParams.category_id !== undefined) {
-        categoryId = queryParams.category_id
-        query.categoryId = queryParams.category_id
+    if (queryParams.categoryId !== undefined) {
+        categoryId = queryParams.categoryId
+        query.categoryId = queryParams.categoryId
     } else {
         categoryId = ''
         query.categoryId = ''
@@ -386,7 +387,7 @@ watch($route, (newValue) => {
 </script>
 
 <style lang="scss">
-.page-category {
+.page-category-document {
     .el-breadcrumb__inner {
         cursor: pointer !important;
 

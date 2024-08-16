@@ -1,10 +1,12 @@
 <template>
-    <h1>文章资讯</h1>
+    <div class="page page-article">
+        
+    </div>
 </template>
 
 <script setup>
-
 </script>
 
 <style lang="scss">
+.page-article {}
 </style>

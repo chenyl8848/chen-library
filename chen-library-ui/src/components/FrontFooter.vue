@@ -70,10 +70,12 @@
                 </span>
             </div>
         </div>
+        <FixedRightBar />
     </div>
 </template>
 
 <script setup>
+import FixedRightBar from './FixedRightBar.vue';
 import { computed, ref } from 'vue';
 import { useRoute } from 'vue-router'
 import useSettingStore from '@/store/module/setting';

@@ -28,7 +28,7 @@
                                     :disabled="categoryStore.categories.filter((x) => !x.type).length === 0">
                                     <category-card :type="0"></category-card>
                                     <template #reference>
-                                        <router-link to="/category">{{ item.title || '文库资料' }}</router-link>
+                                        <router-link to="/category/document">{{ item.title || '文库资料' }}</router-link>
                                     </template>
                                 </el-popover>
                             </el-menu-item>
@@ -38,7 +38,7 @@
                                     :disabled="categoryStore.categories.filter((x) => x.type === 1).length === 0">
                                     <category-card :type="1"></category-card>
                                     <template #reference>
-                                        <router-link to="/article">{{ item.title || '文章资讯' }}</router-link>
+                                        <router-link to="/category/article">{{ item.title || '文章资讯' }}</router-link>
                                     </template>
                                 </el-popover>
                             </el-menu-item>
