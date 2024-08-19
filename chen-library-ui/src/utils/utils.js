@@ -64,6 +64,16 @@ export const categoryToTree = (categories, withDisabled = true) => {
     return result
 }
 
+export const categoryToMap = (categories) => {
+    const map = {}
+
+    categories.forEach((item) => {
+        map[item.id] = item
+    })
+
+    return map
+}
+
 export const formatDateTime = (time) => {
     if (typeof time === 'string' && time !== '') {
         const dateTime = new Date(time)

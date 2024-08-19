@@ -76,7 +76,7 @@ import DocumentSimpleList from '@/components/DocumentSimpleList.vue'
 import ArticleSimpleList from '@/components/ArticleSimpleList.vue'
 import { latestUploadDocmentList, latestPublishArticleList } from '../../mock/data'
 
-const $props = defineProps({
+defineProps({
     user: {
         type: Object,
         default: () => {
@@ -112,8 +112,6 @@ latestUploadDocuments.value = latestUploadDocmentList
 
 const latestPublishArticles = ref([])
 latestPublishArticles.value = latestPublishArticleList
-
-console.log($props.user, "ffffffffffffffff")
 
 </script>
 
