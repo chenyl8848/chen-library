@@ -2808,3 +2808,610 @@ export const articleValue = {
   },
   "status": 1
 }
+
+export const dynamicList = [
+  {
+    "id": 272,
+    "user_id": 5,
+    "content": "签到成功，获得 1 魔豆奖励",
+    "type": 11,
+    "created_at": "2024-06-03T08:06:56Z",
+    "updated_at": "2024-06-03T08:06:56Z"
+  },
+  {
+    "id": 271,
+    "user_id": 5,
+    "content": "下载了文档《<a href=\"/document/6db207f4b15b7791\">MATLAB-掘金量化</a>》",
+    "type": 4,
+    "created_at": "2024-06-03T08:05:31Z",
+    "updated_at": "2024-06-03T08:05:31Z"
+  },
+  {
+    "id": 270,
+    "user_id": 5,
+    "content": "下载了文档《<a href=\"/document/a2de7514ab3dde6f\">语文考试大纲</a>》",
+    "type": 4,
+    "created_at": "2024-06-03T06:38:58Z",
+    "updated_at": "2024-06-03T06:38:58Z"
+  },
+  {
+    "id": 268,
+    "user_id": 5,
+    "content": "签到成功，获得 1 魔豆奖励",
+    "type": 11,
+    "created_at": "2024-05-08T00:36:53Z",
+    "updated_at": "2024-05-08T00:36:53Z"
+  },
+  {
+    "id": 265,
+    "user_id": 5,
+    "content": "下载了文档《<a href=\"/document/6c38bbf51df01916\">阿里巴巴Java开发手册-终极版</a>》",
+    "type": 4,
+    "created_at": "2024-04-17T13:09:00Z",
+    "updated_at": "2024-04-17T13:09:00Z"
+  },
+  {
+    "id": 262,
+    "user_id": 5,
+    "content": "删除了文档《128PPT》，扣除了 1 魔豆",
+    "type": 14,
+    "created_at": "2024-04-08T10:49:22Z",
+    "updated_at": "2024-04-08T10:49:22Z"
+  },
+  {
+    "id": 261,
+    "user_id": 5,
+    "content": "上传了文档《<a href=\"/document/c8aa8d149c0dbef2\">128PPT</a>》，获得了 5 魔豆奖励",
+    "type": 3,
+    "created_at": "2024-04-08T10:35:20Z",
+    "updated_at": "2024-04-08T10:35:20Z"
+  },
+  {
+    "id": 260,
+    "user_id": 5,
+    "content": "下载了文档《<a href=\"/document/9\">Python-掘金量化</a>》",
+    "type": 4,
+    "created_at": "2024-04-08T06:22:49Z",
+    "updated_at": "2024-04-08T06:22:49Z"
+  },
+  {
+    "id": 259,
+    "user_id": 5,
+    "content": "下载了文档《<a href=\"/document/fc2fb7bba3b967bd\">BBBBBBBB亿联答案及解析（B卷）(4)</a>》",
+    "type": 4,
+    "created_at": "2024-04-08T02:53:49Z",
+    "updated_at": "2024-04-08T02:53:49Z"
+  },
+  {
+    "id": 258,
+    "user_id": 5,
+    "content": "签到成功，获得 1 魔豆奖励",
+    "type": 11,
+    "created_at": "2024-04-08T02:51:39Z",
+    "updated_at": "2024-04-08T02:51:39Z"
+  },
+  {
+    "id": 255,
+    "user_id": 5,
+    "content": "上传了文档《<a href=\"/document/77\">12345</a>》，获得了 5 魔豆奖励",
+    "type": 3,
+    "created_at": "2024-01-03T09:48:30Z",
+    "updated_at": "2024-01-03T09:48:30Z"
+  },
+  {
+    "id": 254,
+    "user_id": 5,
+    "content": "签到成功，获得 1 魔豆奖励",
+    "type": 11,
+    "created_at": "2024-01-03T01:34:48Z",
+    "updated_at": "2024-01-03T01:34:48Z"
+  },
+  {
+    "id": 253,
+    "user_id": 5,
+    "content": "删除了文档《H3CSE Security课程（知识树）20180102》，扣除了 1 魔豆",
+    "type": 14,
+    "created_at": "2024-01-03T01:14:20Z",
+    "updated_at": "2024-01-03T01:14:20Z"
+  },
+  {
+    "id": 251,
+    "user_id": 5,
+    "content": "删除了文档《12345》，扣除了 1 魔豆",
+    "type": 14,
+    "created_at": "2024-01-02T01:59:43Z",
+    "updated_at": "2024-01-02T01:59:43Z"
+  },
+  {
+    "id": 250,
+    "user_id": 5,
+    "content": "上传了文档《<a href=\"/document/76\">12345</a>》，获得了 5 魔豆奖励",
+    "type": 3,
+    "created_at": "2024-01-02T01:59:03Z",
+    "updated_at": "2024-01-02T01:59:03Z"
+  },
+  {
+    "id": 247,
+    "user_id": 5,
+    "content": "下载了文档《<a href=\"/document/10\">MATLAB-掘金量化</a>》",
+    "type": 4,
+    "created_at": "2023-12-28T07:14:10Z",
+    "updated_at": "2023-12-28T07:14:10Z"
+  },
+  {
+    "id": 246,
+    "user_id": 5,
+    "content": "下载了文档《<a href=\"/document/73\">BBBBBBBB亿联答案及解析（B卷）(4)</a>》",
+    "type": 4,
+    "created_at": "2023-12-28T07:11:55Z",
+    "updated_at": "2023-12-28T07:11:55Z"
+  },
+  {
+    "id": 245,
+    "user_id": 5,
+    "content": "下载了文档《<a href=\"/document/29\">阿里巴巴Java开发手册-终极版</a>》",
+    "type": 4,
+    "created_at": "2023-12-28T07:01:07Z",
+    "updated_at": "2023-12-28T07:01:07Z"
+  },
+  {
+    "id": 243,
+    "user_id": 5,
+    "content": "使用 积分支付 购买了文档《<a href=\"/document/29\">阿里巴巴Java开发手册-终极版</a>》，支出 1 魔豆",
+    "type": 15,
+    "created_at": "2023-12-28T07:01:07Z",
+    "updated_at": "2023-12-28T07:01:07Z"
+  },
+  {
+    "id": 242,
+    "user_id": 5,
+    "content": "下载了文档《<a href=\"/document/9\">Python-掘金量化</a>》",
+    "type": 4,
+    "created_at": "2023-12-28T07:00:31Z",
+    "updated_at": "2023-12-28T07:00:31Z"
+  }
+]
+
+export const uploadDocumentList = [
+  {
+    "id": 77,
+    "title": "12345",
+    "keywords": "12345",
+    "description": "项目变更决议     XXX项目因XXX问题申请变更，经项目群研究决定，同意该项目走变更流程， 请项目负责人组织变更评审。 项目名称：实际项目名称，与研发管理系统保持一致 变更类型：范围（不涉及延期）/延期（含范围变更导致）/挂起/重启/终止/其 他（项目负责人/优先级/期望人数） 变更原因：写一下变更原因描述，包括范围变更、进度变更、核心人员变更、 其他变更 当前所处阶段：研发立项、方案设计、功能开发、联调与自测、项目有效迭 代、上线迭代，策划和设计阶段写所处子阶段 项目负责人：变更项目的项目负责人 变更干系人：关联项目负责人，需求提出人，干系部门经理等 期望重启日期：2024-2-5，仅适用“挂起”变更，总指挥期望在此日期前满足重 启条件，重启项目    XXX  项目群                                     2023年12月5日        签  字  栏  项目负责人    项目负责人的领导（组长 或部门经理）     项目群总指挥",
+    "user_id": 5,
+    "width": 794,
+    "height": 1123,
+    "preview": 1,
+    "pages": 1,
+    "uuid": "3f187294c8f8e08d",
+    "view_count": 10,
+    "score": 300,
+    "size": 38041,
+    "status": 2,
+    "created_at": "2024-01-03T09:48:30Z",
+    "updated_at": "2024-06-03T08:07:11Z",
+    "username": "admin",
+    "category_id": [
+      40,
+      41
+    ],
+    "ext": ".docx",
+    "attachment": {
+      "hash": "2bb438a4f4d5ce54c6f66f39051f4fa5"
+    },
+    "enable_gzip": true,
+    "preview_ext": ".svg",
+    "language": "zh-CN"
+  },
+  {
+    "id": 73,
+    "title": "BBBBBBBB亿联答案及解析（B卷）(4)",
+    "keywords": "BBBBBBBB,亿联,答案,解析",
+    "description": "参考答案与解析  一、单项选择题（每题 2 分） 1-5  C C C D C   6-10 B C B A A  二、多项选择题（每题 4 分） 1-4.ABCD  BC   AC  BCD    5-8   AB  ABC  AE  CE 三、计算分析题（第 1 题 13 分，第 2 题 25 分） 1.【答案】 （1）分摊至 A 商品的合同价款＝[2÷（2＋3）]×4＝1.6（万元）；  分摊至 B 商品的合同价款＝[（3÷（2＋3）]×4＝2.4（万元）。  （2）甲公司的账务处理如下：  ① 交",
+    "user_id": 5,
+    "width": 794,
+    "height": 1123,
+    "preview": 1,
+    "pages": 1,
+    "uuid": "fc2fb7bba3b967bd",
+    "download_count": 9,
+    "view_count": 53,
+    "score": 300,
+    "size": 20480,
+    "status": 2,
+    "created_at": "2023-10-19T03:22:13Z",
+    "updated_at": "2024-08-21T01:05:43Z",
+    "username": "admin",
+    "category_id": [
+      1,
+      8
+    ],
+    "ext": ".doc",
+    "attachment": {
+      "hash": "19d381ea2b4689df97f686e404836c70"
+    },
+    "preview_ext": ".webp",
+    "language": "zh-CN"
+  },
+  {
+    "id": 60,
+    "title": "《大学语文》考试大纲",
+    "keywords": "大学,语文,大学语文,考试,大纲",
+    "description": "《大学语文》考试大纲  一、考试内容概述 1．学习古今中外的名家名作，了解文化的多样性、丰富性，尤其应当了解并继承中华  民族的优秀文化传统，培养高尚的思想品质和道德情操，提高大学生的语文能力和综合人 文素养。  2．能准确地阅读、理解现当代作品，能读懂难度适中的文言文，并能解释常见的字词  和语言现象，具备较好的阅读理解能力。  3．能够比较准确地分析文章的思想内容和写作手法，具备一定的文学鉴赏水平和综合  分析能力。  4．掌握常用的文体写作知识，具备较高的写作能力。 二、考试形式 考试采用闭卷、笔答",
+    "user_id": 5,
+    "width": 794,
+    "height": 1123,
+    "pages": 3,
+    "uuid": "530337f906a598ab",
+    "view_count": 20,
+    "score": 300,
+    "price": 1,
+    "size": 15487,
+    "status": 2,
+    "created_at": "2023-03-27T05:55:30Z",
+    "updated_at": "2024-04-08T10:13:38Z",
+    "username": "admin",
+    "category_id": [
+      1,
+      2
+    ],
+    "ext": ".docx",
+    "attachment": {
+      "hash": "d176cdc83649745cc7445a73064e61a1"
+    },
+    "enable_gzip": true,
+    "preview_ext": ".svg",
+    "language": "zh-CN"
+  }
+]
+
+export const favoriteDocumentList = [
+  {
+    "id": 9,
+    "user_id": 5,
+    "document_id": 37,
+    "title": "ThinkPHP5.1完全开发手册-10261224",
+    "ext": ".pdf",
+    "score": 300,
+    "size": 4768941,
+    "pages": 619,
+    "document_uuid": "494f605bbaf76fba",
+    "created_at": "2023-10-25T00:41:07Z",
+    "updated_at": "2023-10-25T00:41:07Z"
+  },
+  {
+    "id": 8,
+    "user_id": 5,
+    "document_id": 64,
+    "title": "firebird gstat",
+    "ext": ".pdf",
+    "score": 300,
+    "size": 162939,
+    "pages": 28,
+    "document_uuid": "15223b4519d9a36a",
+    "created_at": "2023-10-19T04:15:13Z",
+    "updated_at": "2023-10-19T04:15:13Z"
+  },
+  {
+    "id": 7,
+    "user_id": 5,
+    "document_id": 67,
+    "title": "firebird isql",
+    "ext": ".pdf",
+    "score": 300,
+    "size": 369327,
+    "pages": 78,
+    "document_uuid": "d7ba332957fb848d",
+    "created_at": "2023-10-19T04:15:10Z",
+    "updated_at": "2023-10-19T04:15:10Z"
+  },
+  {
+    "id": 6,
+    "user_id": 5,
+    "document_id": 72,
+    "title": "firebird 50 language reference",
+    "ext": ".pdf",
+    "score": 300,
+    "size": 3688439,
+    "pages": 791,
+    "document_uuid": "3430cbee6f333437",
+    "created_at": "2023-10-19T04:15:06Z",
+    "updated_at": "2023-10-19T04:15:06Z"
+  },
+  {
+    "id": 5,
+    "user_id": 5,
+    "document_id": 26,
+    "title": "2022年普通高等学校招生全国统一考试数学(天津卷)",
+    "ext": ".docx",
+    "score": 300,
+    "size": 68131,
+    "pages": 2,
+    "document_uuid": "cf5cf65544ad5e7c",
+    "created_at": "2023-10-19T04:12:08Z",
+    "updated_at": "2023-10-19T04:12:08Z"
+  }
+]
+
+export const downloadDocumentList = [
+  {
+    "id": 87,
+    "user_id": 5,
+    "document_id": 10,
+    "ip": "14.150.96.152",
+    "created_at": "2024-06-03T08:05:31Z",
+    "updated_at": "2024-06-03T08:05:31Z",
+    "title": "MATLAB-掘金量化",
+    "ext": ".pdf",
+    "score": 300,
+    "size": 1399233,
+    "pages": 50,
+    "document_uuid": "6db207f4b15b7791"
+  },
+  {
+    "id": 86,
+    "user_id": 5,
+    "document_id": 13,
+    "ip": "14.150.96.152",
+    "created_at": "2024-06-03T06:38:58Z",
+    "updated_at": "2024-06-03T06:38:58Z",
+    "title": "语文考试大纲",
+    "ext": ".doc",
+    "score": 300,
+    "size": 172544,
+    "pages": 25,
+    "document_uuid": "a2de7514ab3dde6f"
+  },
+  {
+    "id": 85,
+    "user_id": 5,
+    "document_id": 1,
+    "ip": "182.91.141.190",
+    "created_at": "2024-04-17T13:09:00Z",
+    "updated_at": "2024-04-17T13:09:00Z",
+    "title": "阿里巴巴Java开发手册-终极版",
+    "ext": ".pdf",
+    "score": 300,
+    "size": 1056366,
+    "pages": 39,
+    "document_uuid": "6c38bbf51df01916"
+  },
+  {
+    "id": 84,
+    "user_id": 5,
+    "document_id": 9,
+    "ip": "180.102.75.20",
+    "created_at": "2024-04-08T06:22:49Z",
+    "updated_at": "2024-04-08T06:22:49Z",
+    "title": "Python-掘金量化",
+    "ext": ".pdf",
+    "score": 300,
+    "size": 2556972,
+    "pages": 142,
+    "document_uuid": "bf836a681dd87f58"
+  },
+  {
+    "id": 83,
+    "user_id": 5,
+    "document_id": 73,
+    "ip": "116.23.221.209",
+    "created_at": "2024-04-08T02:53:49Z",
+    "updated_at": "2024-04-08T02:53:49Z",
+    "title": "BBBBBBBB亿联答案及解析（B卷）(4)",
+    "ext": ".doc",
+    "score": 300,
+    "size": 20480,
+    "pages": 1,
+    "document_uuid": "fc2fb7bba3b967bd"
+  },
+  {
+    "id": 82,
+    "user_id": 5,
+    "document_id": 10,
+    "ip": "116.21.12.86",
+    "created_at": "2023-12-28T07:14:10Z",
+    "updated_at": "2023-12-28T07:14:10Z",
+    "title": "MATLAB-掘金量化",
+    "ext": ".pdf",
+    "score": 300,
+    "size": 1399233,
+    "pages": 50,
+    "document_uuid": "6db207f4b15b7791"
+  },
+  {
+    "id": 81,
+    "user_id": 5,
+    "document_id": 73,
+    "ip": "121.229.141.165",
+    "created_at": "2023-12-28T07:11:55Z",
+    "updated_at": "2023-12-28T07:11:55Z",
+    "title": "BBBBBBBB亿联答案及解析（B卷）(4)",
+    "ext": ".doc",
+    "score": 300,
+    "size": 20480,
+    "pages": 1,
+    "document_uuid": "fc2fb7bba3b967bd"
+  },
+  {
+    "id": 80,
+    "user_id": 5,
+    "document_id": 29,
+    "ip": "117.62.134.205",
+    "created_at": "2023-12-28T07:01:07Z",
+    "updated_at": "2023-12-28T07:01:07Z",
+    "title": "阿里巴巴Java开发手册-终极版",
+    "ext": ".pdf",
+    "score": 300,
+    "size": 1056366,
+    "pages": 39,
+    "document_uuid": "be60243ac2114ccd"
+  },
+  {
+    "id": 79,
+    "user_id": 5,
+    "document_id": 9,
+    "ip": "117.62.134.205",
+    "created_at": "2023-12-28T07:00:31Z",
+    "updated_at": "2023-12-28T07:00:31Z",
+    "title": "Python-掘金量化",
+    "ext": ".pdf",
+    "score": 300,
+    "size": 2556972,
+    "pages": 142,
+    "document_uuid": "bf836a681dd87f58"
+  },
+  {
+    "id": 78,
+    "user_id": 5,
+    "document_id": 10,
+    "ip": "117.62.134.205",
+    "created_at": "2023-12-28T07:00:18Z",
+    "updated_at": "2023-12-28T07:00:18Z",
+    "title": "MATLAB-掘金量化",
+    "ext": ".pdf",
+    "score": 300,
+    "size": 1399233,
+    "pages": 50,
+    "document_uuid": "6db207f4b15b7791"
+  },
+  {
+    "id": 77,
+    "user_id": 5,
+    "document_id": 1,
+    "ip": "121.229.141.165",
+    "created_at": "2023-12-28T02:26:01Z",
+    "updated_at": "2023-12-28T02:26:01Z",
+    "title": "阿里巴巴Java开发手册-终极版",
+    "ext": ".pdf",
+    "score": 300,
+    "size": 1056366,
+    "pages": 39,
+    "document_uuid": "6c38bbf51df01916"
+  },
+  {
+    "id": 76,
+    "user_id": 5,
+    "document_id": 1,
+    "ip": "121.229.141.165",
+    "created_at": "2023-12-28T02:25:56Z",
+    "updated_at": "2023-12-28T02:25:56Z",
+    "title": "阿里巴巴Java开发手册-终极版",
+    "ext": ".pdf",
+    "score": 300,
+    "size": 1056366,
+    "pages": 39,
+    "document_uuid": "6c38bbf51df01916"
+  },
+  {
+    "id": 74,
+    "user_id": 5,
+    "document_id": 10,
+    "ip": "111.198.225.12",
+    "created_at": "2023-10-26T01:22:27Z",
+    "updated_at": "2023-10-26T01:22:27Z",
+    "title": "MATLAB-掘金量化",
+    "ext": ".pdf",
+    "score": 300,
+    "size": 1399233,
+    "pages": 50,
+    "document_uuid": "6db207f4b15b7791"
+  },
+  {
+    "id": 73,
+    "user_id": 5,
+    "document_id": 73,
+    "ip": "183.46.242.198",
+    "created_at": "2023-10-25T02:45:49Z",
+    "updated_at": "2023-10-25T02:45:49Z",
+    "title": "BBBBBBBB亿联答案及解析（B卷）(4)",
+    "ext": ".doc",
+    "score": 300,
+    "size": 20480,
+    "pages": 1,
+    "document_uuid": "fc2fb7bba3b967bd"
+  },
+  {
+    "id": 72,
+    "user_id": 5,
+    "document_id": 13,
+    "ip": "183.46.242.198",
+    "created_at": "2023-10-25T02:45:43Z",
+    "updated_at": "2023-10-25T02:45:43Z",
+    "title": "语文考试大纲",
+    "ext": ".doc",
+    "score": 300,
+    "size": 172544,
+    "pages": 25,
+    "document_uuid": "a2de7514ab3dde6f"
+  },
+  {
+    "id": 71,
+    "user_id": 5,
+    "document_id": 13,
+    "ip": "183.46.242.198",
+    "created_at": "2023-10-25T02:44:29Z",
+    "updated_at": "2023-10-25T02:44:29Z",
+    "title": "语文考试大纲",
+    "ext": ".doc",
+    "score": 300,
+    "size": 172544,
+    "pages": 25,
+    "document_uuid": "a2de7514ab3dde6f"
+  },
+  {
+    "id": 70,
+    "user_id": 5,
+    "document_id": 36,
+    "ip": "183.46.242.198",
+    "created_at": "2023-10-25T02:03:45Z",
+    "updated_at": "2023-10-25T02:03:45Z",
+    "title": "beego开发文档-03121629",
+    "ext": ".pdf",
+    "score": 300,
+    "size": 2735957,
+    "pages": 248,
+    "document_uuid": "154fdfa81a6ac931"
+  },
+  {
+    "id": 69,
+    "user_id": 5,
+    "document_id": 73,
+    "ip": "183.46.242.198",
+    "created_at": "2023-10-25T02:03:07Z",
+    "updated_at": "2023-10-25T02:03:07Z",
+    "title": "BBBBBBBB亿联答案及解析（B卷）(4)",
+    "ext": ".doc",
+    "score": 300,
+    "size": 20480,
+    "pages": 1,
+    "document_uuid": "fc2fb7bba3b967bd"
+  },
+  {
+    "id": 68,
+    "user_id": 5,
+    "document_id": 10,
+    "ip": "1.58.18.97",
+    "created_at": "2023-10-19T03:55:28Z",
+    "updated_at": "2023-10-19T03:55:28Z",
+    "title": "MATLAB-掘金量化",
+    "ext": ".pdf",
+    "score": 300,
+    "size": 1399233,
+    "pages": 50,
+    "document_uuid": "6db207f4b15b7791"
+  },
+  {
+    "id": 67,
+    "user_id": 5,
+    "document_id": 65,
+    "ip": "183.46.42.193",
+    "created_at": "2023-10-19T03:54:23Z",
+    "updated_at": "2023-10-19T03:54:23Z",
+    "title": "Firebird_Language Reference RUS",
+    "ext": ".pdf",
+    "score": 300,
+    "size": 3345261,
+    "pages": 569,
+    "document_uuid": "c83dabd83b8eaa6a"
+  }
+]

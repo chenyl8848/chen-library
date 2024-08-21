@@ -29,8 +29,8 @@ export default [
                 component: () => import('@/pages/article/index.vue')
             },
             {
-                path: '/post',
-                component: () => import('@/pages/post/index.vue')
+                path: '/publish',
+                component: () => import('@/pages/publish/index.vue')
             },
             {
                 path: '/joinvip',
@@ -43,6 +43,38 @@ export default [
             {
                 path: '/user',
                 component: () => import('@/pages/user/index.vue')
+            },
+            {
+                path: '/me',
+                component: () => import('@/pages/me/index.vue'),
+                redirect: '/me/dynamic',
+                children: [
+                    {
+                        path: '/me/dynamic',
+                        component: () => import('@/pages/me/dynamic.vue'),
+                    },
+                    {
+                        path: '/me/document',
+                        component: () => import('@/pages/me/document.vue'),
+                    },
+                    {
+                        path: '/me/article',
+                        component: () => import('@/pages/me/article.vue'),
+                    },
+                    {
+                        path: '/me/favorite',
+                        component: () => import('@/pages/me/favorite.vue'),
+                    },
+                    {
+                        path: '/me/download',
+                        component: () => import('@/pages/me/download.vue'),
+                    },
+                    {
+                        path: '/me/profile',
+                        component: () => import('@/pages/me/profile.vue'),
+                    },
+
+                ]
             },
 
         ]

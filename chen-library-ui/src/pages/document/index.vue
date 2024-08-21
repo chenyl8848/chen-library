@@ -69,21 +69,21 @@
                                 <template v-if="breadcrumbs.length < 3">
                                     <el-breadcrumb-item v-for="breadcrumb in breadcrumbs"
                                         :key="`bread-${breadcrumb.id}`">
-                                        <router-link :to="`/category?category_id=${breadcrumb.id}`">
+                                        <router-link :to="`/category/document?categoryId=${breadcrumb.id}`">
                                             {{ breadcrumb.title }}
                                         </router-link>
                                     </el-breadcrumb-item>
                                 </template>
                                 <template v-else>
                                     <el-breadcrumb-item>
-                                        <router-link :to="`/category?category_id=${breadcrumbs[0].id}`">
+                                        <router-link :to="`/category/document?categoryId=${breadcrumbs[0].id}`">
                                             {{ breadcrumbs[0].title }}
                                         </router-link>
                                     </el-breadcrumb-item>
                                     <el-breadcrumb-item>...</el-breadcrumb-item>
                                     <el-breadcrumb-item>
                                         <router-link
-                                            :to="`/category?category_id=${breadcrumbs[breadcrumbs.length - 1].id}`">{{
+                                            :to="`/category/document?categoryId=${breadcrumbs[breadcrumbs.length - 1].id}`">{{
                                                 breadcrumbs[breadcrumbs.length - 1].title }}</router-link>
                                     </el-breadcrumb-item>
                                 </template>

@@ -12,7 +12,7 @@
             </li>
             <li>
                 <el-tooltip class="item" effect="dark" content="发布文章" placement="left">
-                    <router-link to="/post" class="el-link el-link--default">
+                    <router-link to="/publish" class="el-link el-link--default">
                         <el-icon>
                             <Edit />
                         </el-icon>

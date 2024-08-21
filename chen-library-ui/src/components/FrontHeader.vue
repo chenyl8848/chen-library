@@ -129,13 +129,14 @@ import CategoryCard from '@/components/CategoryCard.vue';
 import NavigationLink from '@/components/NavigationLink.vue';
 import UserAvatar from './UserAvatar.vue';
 import { ref } from 'vue';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 import useSettingStore from '@/store/module/setting';
 import useCategoryStore from '@/store/module/category';
 import useUserStore from '@/store/module/user';
 import { ArrowDown, HomeFilled, Grid, UploadFilled, DocumentAdd, Platform, DArrowRight, Search } from '@element-plus/icons-vue'
 
 const $route = useRoute()
+const $router = useRouter()
 const settingStore = useSettingStore()
 const categoryStore = useCategoryStore()
 const userStore = useUserStore()
@@ -152,6 +153,27 @@ const onSearch = () => {
 
 const handleCommand = (command) => {
     console.log(command, "handleCommand")
+    switch (command) {
+        case 'userHome':
+            $router.push({ path: '/user' })
+            break
+        case 'userCenter':
+            $router.push({ path: '/me' })
+            break
+        case 'uploadDocument':
+            $router.push({ path: '/upload' })
+            break
+        case 'publishArticle':
+            $router.push({ path: '/publish' })
+            break
+        case 'adminBackground':
+            $router.push({ path: '/admin' })
+            break
+        case 'logout':
+            $router.push({ path: '/logout' })
+            break
+
+    }
 }
 </script>
 

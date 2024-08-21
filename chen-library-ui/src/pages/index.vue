@@ -121,7 +121,7 @@
                                 </router-link>
                             </el-col>
                             <el-col :span="12" class="text-right">
-                                <router-link to="/post" class="el-link el-link--default" target="_blank">
+                                <router-link to="/publish" class="el-link el-link--default" target="_blank">
                                     <el-icon>
                                         <Plus />
                                     </el-icon>
@@ -188,7 +188,7 @@
                         <el-card class="box-card" shadow="never">
                             <template #header>
                                 <div class="clearfix">
-                                    <router-link :to="`/category?category_id=${category.id}`" target="_blank"
+                                    <router-link :to="`/category/document?categoryId=${category.id}`" target="_blank"
                                         class="el-link el-link--default">
                                         <img :src="category.icon || '@/assets/images/logo-icon.png'"
                                             :alt="category.title" class="category-icon" />
@@ -196,7 +196,7 @@
                                     </router-link>
                                 </div>
                             </template>
-                            <router-link v-for="item in category.children" :to="`/category?category_id=${item.id}`"
+                            <router-link v-for="item in category.children" :to="`/category/document?categoryId=${item.id}`"
                                 :key="`category-child-${item.id}`" class="el-link el-link--default">
                                 {{ item.title }}
                             </router-link>
@@ -214,14 +214,14 @@
                             <strong>
                                 {{ item.category_name }}
                             </strong>
-                            <router-link :to="`/category?category_id=${item.category_id}`" target="_blank" class="float-right">
+                            <router-link :to="`/category/document?categoryId=${item.category_id}`" target="_blank" class="float-right">
                                 <el-button link type="primary">更多</el-button>
                             </router-link>
                         </div>
                     </template>
                     <div>
                         <div class="card-body-left hidden-xs-only">
-                            <router-link :to="`/category?category_id=${item.category_id}`" target="_blank">
+                            <router-link :to="`/category/document?categoryId=${item.category_id}`" target="_blank">
                                 <el-image lazy class="category-cover" :src="item.category_cover">
                                     <template #error>
                                         <div class="image-slot">

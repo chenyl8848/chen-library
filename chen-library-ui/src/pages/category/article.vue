@@ -49,7 +49,7 @@
                         <router-link class="el-link el-link--default" :class="{
                             'el-link--primary': $route.query.sort === 'popular',
                         }" :to="`?categoryId=${$route.query.categoryId || ''}&sort=popular`">热门文章</router-link>
-                        <router-link to="/post">
+                        <router-link to="/publish">
                             <el-button size="small" type="primary" class="float-right" style="margin-top: -4px"
                                 :icon="Plus">发布文章</el-button>
                         </router-link>
