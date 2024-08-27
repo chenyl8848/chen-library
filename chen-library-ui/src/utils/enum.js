@@ -65,3 +65,11 @@ export const articleStatusEnums = [
     { label: '审核通过', value: 1, type: 'success' },
     { label: '审核拒绝', value: 2, type: 'danger' },
 ]
+
+export const wordExtEnum = ['.doc', '.docx', '.rtf', '.wps', '.odt', '.dot']
+
+export const pptExtEnum = ['.ppt', '.pptx', '.pps', '.ppsx', '.dps', '.odp', '.pot']
+
+export const excelExtEnum = ['.xls', '.xlsx', '.csv', '.tsv', '.et', '.ods']
+
+export const otherExtEnum = ['.epub', '.umd', '.chm', '.mobi', '.azw', '.azw3', '.azw4']
