@@ -19,7 +19,7 @@
                                             </el-col>
                                             <el-col :span="4">
                                                 <el-tooltip placement="top" content="刷新语音验证码">
-                                                    <el-button :icon="Refresh" class="btn-audio-refresh"
+                                                    <el-button icon="Refresh" class="btn-audio-refresh"
                                                         @click="loadCaptcha"></el-button>
                                                 </el-tooltip>
                                             </el-col>
@@ -41,7 +41,7 @@
                             </el-form-item>
                         </template>
                         <el-form-item>
-                            <el-button type="primary" :icon="Position" :size="isMobile ? 'medium' : ''"
+                            <el-button type="primary" icon="Position" :size="isMobile ? 'medium' : ''"
                                 @click="submitForm('form')">发表点评</el-button>
                         </el-form-item>
                     </el-col>
@@ -53,7 +53,6 @@
 
 <script setup>
 import { reactive, defineProps } from 'vue'
-import { Refresh, Position } from '@element-plus/icons-vue'
 import hooks from '@/hooks'
 const { isMobile } = hooks()
 import useSettingStore from '@/store/module/setting'

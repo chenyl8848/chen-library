@@ -13,7 +13,7 @@
                 <el-form-item>
                     <el-input v-model="searchText" size="large" placeholder="搜索文档..." @keydown.enter="onSearch">
                         <template #suffix>
-                            <el-button :icon="Search" link type="info" @click="onSearch" />
+                            <el-button icon="Search" link type="info" @click="onSearch" />
                         </template>
                     </el-input>
                 </el-form-item>
@@ -258,7 +258,6 @@ import useSettingStore from '@/store/module/setting'
 import useUserStore from '@/store/module/user'
 import useCategoryStore from '@/store/module/category'
 import { computed, ref } from 'vue'
-import { Search } from '@element-plus/icons-vue'
 import { articleList, recommendDocumentList, frontDocumentList } from '../../mock/data'
 
 const settingStore = useSettingStore()

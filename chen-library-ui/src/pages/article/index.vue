@@ -23,15 +23,15 @@
                                     accessUpdate ||
                                     accessForbiden)
                             " class="actions">
-                                <el-button v-if="accessDelete" type="primary" link :icon="Delete"
+                                <el-button v-if="accessDelete" type="primary" link icon="Delete"
                                     @click="deleteArticle">删除文章</el-button>
                                 <router-link v-if="accessUpdate" :to="`/post?identifier=${article.identifier}`">
-                                    <el-button type="primary" link :icon="Edit">编辑文章</el-button>
+                                    <el-button type="primary" link icon="Edit">编辑文章</el-button>
                                 </router-link>
                                 <!-- 管理员权限 -->
                                 <el-dropdown v-if="accessForbiden" @command="checkArticle">
                                     <span class="el-dropdown-link">
-                                        <el-button type="primary" link :icon="DocumentChecked">文章审批</el-button>
+                                        <el-button type="primary" link icon="DocumentChecked">文章审批</el-button>
                                     </span>
                                     <template #dropdown>
                                         <el-dropdown-menu>
@@ -42,7 +42,7 @@
                                 </el-dropdown>
                                 <el-dropdown v-if="accessRecommend" @command="recommendArticle">
                                     <span class="el-dropdown-link">
-                                        <el-button type="primary" link :icon="Mug"> 推荐设置</el-button>
+                                        <el-button type="primary" link icon="Mug"> 推荐设置</el-button>
                                     </span>
                                     <template #dropdown>
                                         <el-dropdown-menu>
@@ -170,9 +170,9 @@
                             <share-box :title="article.title" />
                         </el-col>
                         <el-col :span="12" class="text-right">
-                            <el-button v-if="favorite.id > 0" type="primary" :icon="Star"
+                            <el-button v-if="favorite.id > 0" type="primary" icon="Star"
                                 @click="deleteFavorite">取消收藏</el-button>
-                            <el-button v-else type="primary" :size="isMobile ? 'medium' : 'large'" :icon="StarFilled"
+                            <el-button v-else type="primary" :size="isMobile ? 'medium' : 'large'" icon="StarFilled"
                                 @click="createFavorite">收藏文章</el-button>
                         </el-col>
                     </el-row>
@@ -203,7 +203,6 @@ import CommentForm from '@/components/CommentForm.vue'
 import CommentList from '@/components/CommentList.vue'
 import ArticleSimpleList from '@/components/ArticleSimpleList.vue'
 import { onMounted, reactive, ref } from 'vue'
-import { DocumentChecked, Edit, Delete, Mug, StarFilled, Star } from '@element-plus/icons-vue'
 import { formatRelativeTime } from '@/utils/utils'
 import { articleValue, relatedArticleList } from '../../../mock/data'
 

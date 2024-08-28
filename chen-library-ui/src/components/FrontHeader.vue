@@ -62,7 +62,7 @@
                         :class="categoryStore.navigations.length <= 2 ? 'nav-searchbox-large' : ''">
                         <el-input v-model="searchText" @keydown.enter="onSearch">
                             <template #suffix>
-                                <el-button :icon="Search" link type="info" @click="onSearch" />
+                                <el-button icon="Search" link type="info" @click="onSearch" />
                             </template>
                         </el-input>
                     </el-menu-item>
@@ -133,7 +133,6 @@ import { useRoute, useRouter } from 'vue-router';
 import useSettingStore from '@/store/module/setting';
 import useCategoryStore from '@/store/module/category';
 import useUserStore from '@/store/module/user';
-import { ArrowDown, HomeFilled, Grid, UploadFilled, DocumentAdd, Platform, DArrowRight, Search } from '@element-plus/icons-vue'
 
 const $route = useRoute()
 const $router = useRouter()

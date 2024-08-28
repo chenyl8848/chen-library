@@ -27,14 +27,13 @@
             </el-form-item>
 
             <el-form-item class="btn-setprofile">
-                <el-button type="primary" class="btn-block" :icon="Check" @click="setProfile">修改资料</el-button>
+                <el-button type="primary" class="btn-block" icon="Check" @click="setProfile">修改资料</el-button>
             </el-form-item>
         </el-form>
     </div>
 </template>
 
 <script setup>
-import { Check } from '@element-plus/icons-vue'
 import { reactive } from 'vue';
 import useUserStore from '@/store/module/user'
 const userStore = useUserStore()

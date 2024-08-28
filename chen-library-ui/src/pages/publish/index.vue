@@ -4,7 +4,7 @@
          <template #header>
             <div>
                发布文章
-               <el-button style="float: right; margin-top: -10px" type="primary" link :icon="Back" @click="back">返回</el-button>
+               <el-button style="float: right; margin-top: -10px" type="primary" link icon="Back" @click="back">返回</el-button>
             </div>
          </template>
          <article-form v-loading="loading" :init-article="article" :category-trees="trees" :can-i-publish="canIPublish"
@@ -15,7 +15,6 @@
 
 <script setup>
 import { onMounted, reactive, ref } from 'vue'
-import { Back } from '@element-plus/icons-vue'
 import ArticleForm from '@/components/ArticleForm.vue'
 import useUserStore from '@/store/module/user'
 const userStore = useUserStore()

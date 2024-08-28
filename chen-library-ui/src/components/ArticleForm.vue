@@ -75,7 +75,7 @@
             </div>
         </el-form-item> -->
         <el-form-item>
-            <el-button type="primary" class="btn-block" :icon="Check" :disabled="!canIPublish" :loading="loading"
+            <el-button type="primary" class="btn-block" icon="Check" :disabled="!canIPublish" :loading="loading"
                 @click="onSubmit">{{ canIPublish ? '提交' : '你未登录或没有权限发布文章' }}</el-button>
         </el-form-item>
     </el-form>
@@ -83,7 +83,6 @@
 
 <script setup>
 import { defineProps, reactive, ref } from 'vue'
-import { Check } from '@element-plus/icons-vue'
 
 defineProps({
     isAdmin: {

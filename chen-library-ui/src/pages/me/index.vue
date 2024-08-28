@@ -7,12 +7,12 @@
                     <el-row v-if="!isMobile" :gutter="10">
                         <el-col :span="12">
                             <router-link to="/upload">
-                                <el-button type="primary" :icon="Upload" class="btn-block mgt-20px">上传文档</el-button>
+                                <el-button type="primary" icon="Upload" class="btn-block mgt-20px">上传文档</el-button>
                             </router-link>
                         </el-col>
                         <el-col :span="12">
                             <router-link to="/publish">
-                                <el-button type="primary" :icon="Plus" class="btn-block mgt-20px">发布文章</el-button>
+                                <el-button type="primary" icon="Plus" class="btn-block mgt-20px">发布文章</el-button>
                             </router-link>
                         </el-col>
                     </el-row>
@@ -59,7 +59,6 @@
 <script setup>
 import { ref, watch, reactive } from 'vue'
 import UserCard from '@/components/UserCard.vue'
-import { Upload, Plus } from '@element-plus/icons-vue'
 import useUserStore from '@/store/module/user'
 const userStore = useUserStore()
 

@@ -51,7 +51,7 @@
                         }" :to="`?categoryId=${$route.query.categoryId || ''}&sort=popular`">热门文章</router-link>
                         <router-link to="/publish">
                             <el-button size="small" type="primary" class="float-right" style="margin-top: -4px"
-                                :icon="Plus">发布文章</el-button>
+                                icon="Plus">发布文章</el-button>
                         </router-link>
                     </template>
                     <article-list-skeleton v-if="loading && articles.length === 0 && query.page === 1" />
@@ -71,7 +71,7 @@
                         <div v-if="recommendArticles.length > 0">
                             <article-simple-list v-loading="recommend.loading" :articles="recommendArticles">
                             </article-simple-list>
-                            <el-button v-if="recommend.totalPage > 1" :icon="Refresh" link type="primary" class="mgb-5px"
+                            <el-button v-if="recommend.totalPage > 1" icon="Refresh" link type="primary" class="mgb-5px"
                                 @click="getRecommendArticles">换一批</el-button>
                         </div>
                         <el-empty v-else> </el-empty>
@@ -86,7 +86,6 @@
 <script setup>
 import { onMounted, reactive, ref, watch } from 'vue';
 import { useRoute } from 'vue-router'
-import { Plus, Refresh } from '@element-plus/icons-vue'
 import ArticleNavbar from '@/components/ArticleNavbar.vue'
 import ArticleList from '@/components/ArticleList.vue'
 import ArticleListSkeleton from '@/components/ArticleListSkeleton.vue'

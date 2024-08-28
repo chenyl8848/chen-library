@@ -103,7 +103,7 @@
                                        @click="clearAllFiles">清空</el-button>)
                                  </template>
                                  <template #default="{ rowIndex }">
-                                    <el-button size="small" type="primary" link :icon="Delete" :disabled="loading"
+                                    <el-button size="small" type="primary" link icon="Delete" :disabled="loading"
                                        @click="handleRemove(rowIndex)">
                                        移除
                                     </el-button>
@@ -117,7 +117,7 @@
                               <span v-if="loading">请勿刷新页面，文档上传中...</span>
                               <span v-else>确定上传</span>
                            </el-button>
-                           <el-button v-else type="primary" :icon="HotWater" class="btn-block" disabled>
+                           <el-button v-else type="primary" icon="HotWater" class="btn-block" disabled>
                               <span v-if="userStore.user.id > 0">您暂无权限上传文档</span>
                               <span v-else>您未登录，请先登录</span>
                            </el-button>
@@ -199,7 +199,6 @@
 
 <script setup>
 import { onMounted, reactive, ref } from 'vue'
-import { Upload, HotWater, Delete } from '@element-plus/icons-vue'
 import useSettingStore from '@/store/module/setting'
 const settingStore = useSettingStore()
 import useUserStore from '@/store/module/user'

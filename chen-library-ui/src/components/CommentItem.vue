@@ -27,7 +27,7 @@
                         </el-tooltip>
                     </el-col>
                     <el-col :span="12" class="text-right">
-                        <el-button type="text" size="small" :icon="ChatDotSquare" @click="reply">回复</el-button>
+                        <el-button type="text" size="small" icon="ChatDotSquare" @click="reply">回复</el-button>
                     </el-col>
                 </el-row>
             </div>
@@ -48,7 +48,6 @@ const { isMobile } = hooks()
 import useUserStore from '@/store/module/user'
 const userStore = useUserStore()
 import { formatDateTime } from '@/utils/utils'
-import {ChatDotSquare} from '@element-plus/icons-vue'
 
 defineProps({
     size: {

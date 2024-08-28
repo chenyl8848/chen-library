@@ -38,7 +38,7 @@
       <el-table-column label="操作" width="90" fixed="right">
         <template #default="scope">
           <el-tooltip content="移除收藏" placement="top">
-            <el-button link type="primary" :icon="Delete" @click="removeFavorite(scope.row)">移除</el-button>
+            <el-button link type="primary" icon="Delete" @click="removeFavorite(scope.row)">移除</el-button>
           </el-tooltip>
         </template>
       </el-table-column>
@@ -55,7 +55,6 @@
 import { defineProps, reactive, ref, onMounted } from 'vue'
 import { relatedArticleList } from '../../mock/data'
 import { formatDateTime, formatRelativeTime } from '@/utils/utils'
-import { Delete } from '@element-plus/icons-vue'
 import hooks from '@/hooks'
 const { isMobile } = hooks()
 defineProps({

@@ -52,7 +52,7 @@
             </el-form-item>
 
             <el-form-item>
-                <el-button type="primary" class="btn-block" :icon="Check" @click="setDocument(documentRef)">提交</el-button>
+                <el-button type="primary" class="btn-block" icon="Check" @click="setDocument(documentRef)">提交</el-button>
             </el-form-item>
         </el-form>
     </div>
@@ -63,7 +63,6 @@ import { defineProps, reactive, ref, watch, defineEmits } from 'vue'
 import useSettingStore from '@/store/module/setting'
 const settingStore = useSettingStore()
 import { documentStatusEnums } from '@/utils/enum'
-import { Check } from '@element-plus/icons-vue'
 
 const $props = defineProps({
     // 是否是管理员。如果是管理员，则可以更新文档的状态，如禁用等

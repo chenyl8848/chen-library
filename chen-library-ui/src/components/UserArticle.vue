@@ -11,7 +11,7 @@
                 </el-date-picker>
             </el-form-item>
             <el-form-item>
-                <el-button type="primary" :icon="Search" :loading="loading" @click="onSearch">
+                <el-button type="primary" icon="Search" :loading="loading" @click="onSearch">
                     搜索
                 </el-button>
             </el-form-item>
@@ -59,10 +59,10 @@
             <el-table-column v-if="userId === userStore.user.id" label="操作" width="100" fixed="right">
                 <template #default="scope">
                     <el-tooltip content="编辑文章" placement="top">
-                        <el-button link type="primary" :icon="Edit" @click="updateArticle(scope.row)"></el-button>
+                        <el-button link type="primary" icon="Edit" @click="updateArticle(scope.row)"></el-button>
                     </el-tooltip>
                     <el-tooltip content="删除文章" placement="top">
-                        <el-button link type="primary" :icon="Delete" @click="deleteArticle(scope.row)"></el-button>
+                        <el-button link type="primary" icon="Delete" @click="deleteArticle(scope.row)"></el-button>
                     </el-tooltip>
                 </template>
             </el-table-column>
@@ -78,7 +78,6 @@
 
 <script setup>
 import { defineProps, reactive, ref, computed, onMounted } from 'vue'
-import { Search, Edit, Delete } from '@element-plus/icons-vue'
 import { datetimePickerShortcuts, articleStatusEnums } from '@/utils/enum'
 import { formatDateTime, formatRelativeTime } from '@/utils/utils'
 import hooks from '@/hooks'

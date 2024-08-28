@@ -20,7 +20,7 @@
                 <el-input v-model="profile.repeat_password" type="password"></el-input>
             </el-form-item>
             <el-form-item>
-                <el-button type="primary" class="btn-block" :icon="Check" @click="setPassword">修改密码</el-button>
+                <el-button type="primary" class="btn-block" icon="Check" @click="setPassword">修改密码</el-button>
             </el-form-item>
         </el-form>
     </div>
@@ -28,7 +28,6 @@
 
 <script setup>
 import { reactive } from 'vue';
-import { Check } from '@element-plus/icons-vue'
 
 import useUserStore from '@/store/module/user'
 const userStore = useUserStore()

@@ -27,20 +27,20 @@
                                         accessForbiden)
                                 " class="actions">
                                     <el-button v-if="accessUpdate" type="primary" link :loading="showUpdating"
-                                        :icon="EditPen" @click="showUpdateDocument">
+                                        icon="EditPen" @click="showUpdateDocument">
                                         编辑文档
                                     </el-button>
-                                    <el-button v-if="accessDelete" type="primary" link :icon="DocumentDelete"
+                                    <el-button v-if="accessDelete" type="primary" link icon="DocumentDelete"
                                         @click="deleteDocument">
                                         删除文档
                                     </el-button>
 
                                     <!-- 管理员权限 -->
-                                    <el-button v-if="accessForbiden" type="primary" link :icon="NoSmoking"
+                                    <el-button v-if="accessForbiden" type="primary" link icon="NoSmoking"
                                         @click="forbiden">禁用文档</el-button>&nbsp;
                                     <el-dropdown v-if="accessRecommend" @command="setRecommend">
                                         <span class="el-dropdown-link">
-                                            <el-button type="primary" link :icon="Mug">推荐设置</el-button>
+                                            <el-button type="primary" link icon="Mug">推荐设置</el-button>
                                         </span>
                                         <template #dropdown>
                                             <el-dropdown-menu>
@@ -166,9 +166,9 @@
                                         {{ item.value }}
                                     </div>
                                     <div class="text-center">
-                                        <el-button v-if="showContent" type="primary" link :icon="ArrowUp" size="small"
+                                        <el-button v-if="showContent" type="primary" link icon="ArrowUp" size="small"
                                             @click="toggleContent">收起内容</el-button>
-                                        <el-button v-else type="primary" link :icon="ArrowDown" size="small"
+                                        <el-button v-else type="primary" link icon="ArrowDown" size="small"
                                             @click="toggleContent">展开内容</el-button>
                                     </div>
                                 </div>
@@ -212,7 +212,7 @@
                     </div>
                     <div class="doc-page-more text-center">
                         <div>下载文档到本地，方便使用</div>
-                        <el-button type="primary" :icon="Download" :size="isMobile ? 'medium' : ''"
+                        <el-button type="primary" icon="Download" :size="isMobile ? 'medium' : ''"
                             :loading="downloading" @click="downloadDocument">下载文档({{ formatBytes(document.size)
                             }})</el-button>
                         <div v-if="document.preview - pages.length > 0">
@@ -242,7 +242,7 @@
                             上传分享
                         </div>
                         <div class="btn-actions">
-                            <el-button type="primary" :size="isMobile ? 'medium' : ''" plain :icon="Warning"
+                            <el-button type="primary" :size="isMobile ? 'medium' : ''" plain icon="Warning"
                                 @click="showReport">举报</el-button>
                             <!-- <el-button
                 type="primary"
@@ -254,8 +254,8 @@
                 >下载文档({{ formatBytes(document.size) }})</el-button
               >-->
                             <el-button v-if="favorite.id > 0" type="primary" plain class="float-right hidden-xs-only"
-                                :icon="Star" @click="deleteFavorite">取消收藏</el-button>
-                            <el-button v-else type="primary" class="float-right hidden-xs-only" :icon="StarFilled"
+                                icon="Star" @click="deleteFavorite">取消收藏</el-button>
+                            <el-button v-else type="primary" class="float-right hidden-xs-only" icon="StarFilled"
                                 @click="createFavorite">收藏</el-button>
                         </div>
                     </div>
@@ -273,7 +273,7 @@
                             '该文档非常棒',
                         ]" @change="setDocumentScore"></el-rate>
                     </div>
-                    <comment-form :document-id="document.id" class="mgt-20px" @success="commentSuccess" ></comment-form>
+                    <comment-form :document-id="document.id" class="mgt-20px" @success="commentSuccess"></comment-form>
                     <comment-list ref="commentList" :document-id="document.id" />
                 </el-card>
             </el-col>
@@ -301,48 +301,47 @@
                     <el-col :span="18">
                         <el-button-group class="btn-actions">
                             <el-tooltip v-if="isMobile" content="文档点评">
-                                <el-button :icon="ChatDotSquare" @click="gotoComment"></el-button>
+                                <el-button icon="ChatDotSquare" @click="gotoComment"></el-button>
                             </el-tooltip>
                             <el-tooltip content="全屏阅读" class="hidden-xs-only">
-                                <el-button :icon="FullScreen" @click="fullscreen"></el-button>
+                                <el-button icon="FullScreen" @click="fullscreen"></el-button>
                             </el-tooltip>
                             <el-tooltip :content="favorite.id > 0 ? '取消收藏' : '收藏文档'">
-                                <el-button v-if="favorite.id > 0" :icon="StarFilled"
-                                    @click="deleteFavorite"></el-button>
-                                <el-button v-else :icon="Star" @click="createFavorite"></el-button>
+                                <el-button v-if="favorite.id > 0" icon="StarFilled" @click="deleteFavorite"></el-button>
+                                <el-button v-else icon="Star" @click="createFavorite"></el-button>
                             </el-tooltip>
                             <el-tooltip content="缩小" class="hidden-xs-only">
-                                <el-button :icon="ZoomOut" :disabled="scaleSpan === 18" @click="zoomOut"></el-button>
+                                <el-button icon="ZoomOut" :disabled="scaleSpan === 18" @click="zoomOut"></el-button>
                             </el-tooltip>
                             <el-tooltip content="放大" class="hidden-xs-only">
-                                <el-button :icon="ZoomIn" :disabled="scaleSpan === 24" @click="zoomIn"></el-button>
+                                <el-button icon="ZoomIn" :disabled="scaleSpan === 24" @click="zoomIn"></el-button>
                             </el-tooltip>
                             <el-tooltip content="上一页" class="hidden-xs-only">
-                                <el-button :icon="ArrowUp" :disabled="currentPage === 1" @click="prevPage"></el-button>
+                                <el-button icon="ArrowUp" :disabled="currentPage === 1" @click="prevPage"></el-button>
                             </el-tooltip>
                             <el-tooltip content="当前页数/总页数" class="hidden-xs-only">
                                 <el-button>{{ currentPage }}/{{ document.pages }}</el-button>
                             </el-tooltip>
                             <el-tooltip content="下一页" class="hidden-xs-only">
-                                <el-button :icon="ArrowDown" :disabled="currentPage === document.preview"
+                                <el-button icon="ArrowDown" :disabled="currentPage === document.preview"
                                     @click="nextPage"></el-button>
                             </el-tooltip>
                         </el-button-group>
-                        <el-button class="btn-comment hidden-xs-only" :icon="ChatDotSquare"
+                        <el-button class="btn-comment hidden-xs-only" icon="ChatDotSquare"
                             @click="gotoComment">文档点评</el-button>
                         <el-button-group class="float-right">
-                            <el-button type="primary" :icon="Coin" class="btn-coin">
+                            <el-button type="primary" icon="Coin" class="btn-coin">
                                 {{ document.price || 0 }}
                                 <span>{{ settingStore.system.credit_name || '魔豆' }}</span>
                             </el-button>
-                            <el-button type="primary" :icon="Download" :loading="downloading" @click="downloadDocument">
+                            <el-button type="primary" icon="Download" :loading="downloading" @click="downloadDocument">
                                 下载文档
                                 <span class="hidden-xs-only">({{ formatBytes(document.size) }})</span>
                             </el-button>
                         </el-button-group>
                     </el-col>
                     <el-col :span="6" class="text-right hidden-xs-only">
-                        <el-button :icon="Top" @click="scrollTop">回到顶部</el-button>
+                        <el-button icon="Top" @click="scrollTop">回到顶部</el-button>
                     </el-col>
                 </el-row>
             </el-card>
@@ -357,7 +356,7 @@ import DocumentSimpleList from '@/components/DocumentSimpleList.vue'
 import CommentForm from '@/components/CommentForm.vue'
 import CommentList from '@/components/CommentList.vue'
 import { relatedDocumentList, documentValue } from '../../../mock/data'
-import { Download, Top, ChatDotSquare, Coin, ZoomIn, ZoomOut, ArrowUp, StarFilled, Warning, FullScreen, Star, ArrowDown, EditPen, DocumentDelete, NoSmoking, Mug, Document, InfoFilled, User } from '@element-plus/icons-vue'
+import { Download, ChatDotSquare, Star, Document, InfoFilled, User } from '@element-plus/icons-vue'
 import hooks from '@/hooks/index'
 import { formatBytes, formatDateTime } from '@/utils/utils'
 import useSettingStore from '@/store/module/setting'
@@ -503,9 +502,9 @@ const scrollTop = () => {
 
 const disabledScore = ref(false)
 const score = ref(0)
-const setDocumentScore = () => {}
+const setDocumentScore = () => { }
 
-const commentSuccess = () => {}
+const commentSuccess = () => { }
 </script>
 
 <style lang="scss">

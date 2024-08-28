@@ -13,7 +13,7 @@
                 </el-date-picker>
             </el-form-item>
             <el-form-item>
-                <el-button type="primary" :icon="Search" :loading="loading" @click="onSearch">
+                <el-button type="primary" icon="Search" :loading="loading" @click="onSearch">
                     搜索
                 </el-button>
             </el-form-item>
@@ -90,11 +90,11 @@
             <el-table-column label="操作" width="90" fixed="right">
                 <template #default="scope">
                     <el-tooltip content="编辑文档" placement="top">
-                        <el-button link type="primary" :icon="Edit" :loading="updating"
+                        <el-button link type="primary" icon="Edit" :loading="updating"
                             @click="updateDocument(scope.row)"></el-button>
                     </el-tooltip>
                     <el-tooltip content="删除文档" placement="top">
-                        <el-button link type="primary" :icon="Delete" @click="deleteDocument(scope.row)"></el-button>
+                        <el-button link type="primary" icon="Delete" @click="deleteDocument(scope.row)"></el-button>
                     </el-tooltip>
                 </template>
             </el-table-column>
@@ -116,7 +116,6 @@
 import { onMounted, reactive, ref } from 'vue'
 import { uploadDocumentList, documentValue } from '../../../mock/data'
 import { datetimePickerShortcuts, documentStatusEnums } from '@/utils/enum'
-import { Search, Edit, Delete } from '@element-plus/icons-vue'
 import DocumentUpdateForm from '@/components/DocumentUpdateForm.vue'
 import hooks from '@/hooks'
 const { isMobile } = hooks()
