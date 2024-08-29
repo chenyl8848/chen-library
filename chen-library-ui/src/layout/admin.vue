@@ -16,7 +16,7 @@
             </template>
           </el-menu-item>
           <template v-for="menu in menus">
-            <el-sub-menu v-if="menu.children" :key="'submenu-' + menu.page" :index="menu.page">
+            <el-sub-menu v-if="menu.children" :key="`submenu-${menu.page}`" :index="menu.page">
               <template #title>
                 <el-icon>
                   <component :is="menu.icon"></component>
@@ -30,7 +30,7 @@
                 <span>{{ child.title }}</span>
               </el-menu-item>
             </el-sub-menu>
-            <el-menu-item v-else :key="'menu-' + menu.page" :index="menu.page">
+            <el-menu-item v-else :key="`menu-${menu.page}`" :index="menu.page">
               <template #title>
                 <el-icon>
                   <component :is="menu.icon"></component>
@@ -72,12 +72,13 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import { adminMenus } from '@/utils/permission'
 import useUserStore from '@/store/module/user'
-import { useRouter } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 const userStore = useUserStore()
 const $router = useRouter()
+const $route = useRoute()
 
 const isCollapse = ref(false)
 
@@ -91,6 +92,10 @@ const menus = adminMenus
 const command = (command) => {
   console.log(command)
 }
+
+watch(() => $route, (newVal) => {
+  activeMenu.value = newVal.path
+}, { deep: true, immediate: true })
 </script>
 
 <style lang="scss">
