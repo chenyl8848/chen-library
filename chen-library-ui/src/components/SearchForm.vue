@@ -2,12 +2,13 @@
     <div class="search-form">
         <el-row>
             <el-button type="primary" icon="Plus" @click="onAdd" v-if="showAdd">新增</el-button>
-            <el-button type="danger" icon="Delete" @click="onDelete" v-if="showDelete" :disabled="disabledDelete">批量删除</el-button>
+            <el-button type="danger" icon="Delete" @click="onDelete" v-if="showDelete"
+                :disabled="disabledDelete">批量删除</el-button>
             <slot name="buttons"></slot>
         </el-row>
-        <el-row style="margin-top: 20px;">
+        <el-row class="mgt-20px">
             <el-col :span="21">
-                <el-form :model="search" ref="searchForm">
+                <el-form :model="search" ref="searchForm" label-width="auto">
                     <el-row :gutter="20">
                         <el-col :span="5" v-for="(field, index) in fields" :key="index">
                             <el-form-item :label="field.label">

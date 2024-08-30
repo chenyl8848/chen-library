@@ -1,7 +1,7 @@
 <template>
     <div>
         <el-card shadow="never" class="search-card">
-            <SearchForm :fields="searchFormFields" :loading="loading" :show-create="true" :show-delete="true"
+            <SearchForm :fields="searchFormFields" :loading="loading" :show-add="true" :show-delete="true"
                 :disabled-delete="selectedRow.length === 0" @onSearch="onSearch" @onAdd="onAdd" @onDelete="batchDelete">
             </SearchForm>
         </el-card>

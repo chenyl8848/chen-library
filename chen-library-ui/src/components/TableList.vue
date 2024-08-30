@@ -14,7 +14,7 @@
                     <!-- 数字 -->
                     <span v-else-if="item.type === 'number'">{{
                         scope.row[item.prop] || '0'
-                        }}</span>
+                    }}</span>
                     <el-tag v-else-if="item.type === 'bool'" :type="scope.row[item.prop] ? 'success' : 'danger'"
                         effect="dark">
                         {{ scope.row[item.prop] ? '是' : '否' }}</el-tag>
@@ -36,7 +36,7 @@
                     <span v-else-if="item.type === 'color'">
                         <span :style="{ color: scope.row[item.prop] }">{{
                             scope.row[item.prop] || '-'
-                            }}</span>
+                        }}</span>
                     </span>
                     <span v-else-if="['link', 'url'].includes(item.type)">
                         <a :href="scope.row[item.prop]" target="_blank">
@@ -81,7 +81,7 @@
                         @click="viewRow(scope.row)">查看</el-button>
                     <el-button v-if="showEdit" type="primary" link size="small" icon="Edit"
                         @click="editRow(scope.row)">编辑</el-button>
-                    <el-button v-if="showDelete" type="primary" link size="small" icon="Delete"
+                    <el-button v-if="showDelete" type="danger" link size="small" icon="Delete"
                         :disabled="scope.row.disableDelete" @click="deleteRow(scope.row)"
                         class="text-danger">删除</el-button>
                 </template>
@@ -93,7 +93,7 @@
 <script setup>
 import { defineProps, defineEmits } from 'vue'
 import UploadImage from './UploadImage.vue'
-import { formatDateTime } from '@/utils/utils'
+import { formatDateTime, formatBytes } from '@/utils/utils'
 
 defineProps({
     loading: {

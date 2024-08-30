@@ -49,6 +49,75 @@ export const datetimePickerShortcuts = [
     },
 ]
 
+export const datetimePickerPunishmentShortcuts = [
+    {
+        text: '1小时',
+        onClick(picker) {
+            const end = new Date()
+            end.setTime(end.getTime() + 3600 * 1000)
+            picker.$emit('pick', end)
+        },
+    },
+    {
+        text: '12小时',
+        onClick(picker) {
+            const end = new Date()
+            end.setTime(end.getTime() + 3600 * 1000 * 12)
+            picker.$emit('pick', end)
+        },
+    },
+    {
+        text: '1天',
+        onClick(picker) {
+            const end = new Date()
+            end.setTime(end.getTime() + 3600 * 1000 * 24)
+            picker.$emit('pick', end)
+        },
+    },
+    {
+        text: '2天',
+        onClick(picker) {
+            const end = new Date()
+            end.setTime(end.getTime() + 3600 * 1000 * 24 * 2)
+            picker.$emit('pick', end)
+        },
+    },
+    {
+        text: '1周',
+        onClick(picker) {
+            const end = new Date()
+            end.setTime(end.getTime() + 3600 * 1000 * 24 * 7)
+            picker.$emit('pick', end)
+        },
+    },
+    {
+        text: '1月',
+        onClick(picker) {
+            const end = new Date()
+            end.setTime(end.getTime() + 3600 * 1000 * 24 * 30)
+            picker.$emit('pick', end)
+        },
+    },
+    {
+        text: '半年',
+        onClick(picker) {
+            const start = new Date()
+            const end = new Date()
+            end.setTime(end.getTime() + 3600 * 1000 * 24 * 183)
+            picker.$emit('pick', [start, end])
+        },
+    },
+    {
+        text: '1年',
+        onClick(picker) {
+            const start = new Date()
+            const end = new Date()
+            end.setTime(end.getTime() + 3600 * 1000 * 24 * 365)
+            picker.$emit('pick', [start, end])
+        },
+    },
+]
+
 export const documentStatusEnums = [
     { label: '待转换', value: 0, type: 'info' },
     { label: '转换中', value: 1, type: 'primary' },
@@ -73,3 +142,47 @@ export const pptExtEnum = ['.ppt', '.pptx', '.pps', '.ppsx', '.dps', '.odp', '.p
 export const excelExtEnum = ['.xls', '.xlsx', '.csv', '.tsv', '.et', '.ods']
 
 export const otherExtEnum = ['.epub', '.umd', '.chm', '.mobi', '.azw', '.azw3', '.azw4']
+
+export const boolEnum = [
+    { label: '是', value: true, type: 'success' },
+    { label: '否', value: false, type: 'danger' },
+]
+
+export const methodEnum = [
+    {
+        label: 'GET',
+        value: 'GET',
+        type: 'success',
+    },
+    {
+        label: 'POST',
+        value: 'POST',
+        type: 'primary',
+    },
+    {
+        label: 'PUT',
+        value: 'PUT',
+        type: 'warning',
+    },
+    {
+        label: 'DELETE',
+        value: 'DELETE',
+        type: 'danger',
+    },
+    {
+        label: 'GRPC',
+        value: 'GRPC',
+        type: 'primary',
+    },
+]
+
+export const punishmentEnum = [
+    { label: '禁用账户', value: 1, type: 'danger' },
+    { label: '禁止评论', value: 2, type: 'warning' },
+    { label: '禁止上传', value: 3, type: 'warning' },
+    { label: '禁止下载', value: 4, type: 'warning' },
+    { label: '禁止收藏', value: 5, type: 'warning' },
+    { label: '禁止发布文章', value: 6, type: 'warning' },
+]
+
+
