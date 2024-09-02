@@ -20,7 +20,7 @@
                 </el-image>
             </el-tooltip>
             <div v-if="showRemove && image" class="el-upload__tip">
-                <el-button type="text" size="mini" icon="el-icon-delete" @click="onRemove">移除图片</el-button>
+                <el-button type="primary" link size="small" icon="Delete" @click="onRemove">移除图片</el-button>
             </div>
         </el-upload>
     </div>

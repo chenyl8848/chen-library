@@ -16,9 +16,7 @@
                     </el-tooltip>
                 </template>
             </TableList>
-        </el-card>
-        <el-card v-if="total > 0" shadow="never" class="mgt-20px">
-            <div class="text-right">
+            <div class="mgt-20px text-right">
                 <el-pagination background :current-page="search.page" :page-sizes="[10, 20, 50, 100]"
                     :page-size="search.size" layout="total, sizes, prev, pager, next, jumper" :total="total"
                     @size-change="handleSizeChange" @current-change="handlePageChange">

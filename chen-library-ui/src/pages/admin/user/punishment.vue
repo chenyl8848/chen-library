@@ -26,16 +26,13 @@
             <TableList :loading="loading" :table-data="punishments" :fields="tableListFields" :show-actions="true"
                 :show-view="false" :show-edit="true" :show-delete="false" :show-select="true" :actions-min-width="80"
                 @selectRow="selectRow" @editRow="editRow" />
-        </el-card>
-        <el-card shadow="never" class="mgt-20px">
-            <div class="text-right">
+            <div class="mgt-20px text-right">
                 <el-pagination background :current-page="search.page" :page-sizes="[10, 20, 50, 100]"
                     :page-size="search.size" layout="total, sizes, prev, pager, next, jumper" :total="total"
                     @size-change="handleSizeChange" @current-change="handlePageChange">
                 </el-pagination>
             </div>
         </el-card>
-
         <el-dialog :close-on-click-modal="false" :title="punishment.id ? '编辑惩罚' : '新增惩罚'"
             v-model="punishmentFormVisible" width="640px">
             <PunishmentForm :init-punishment="punishment" @success="onSuccess" />
@@ -66,7 +63,6 @@ const searchFormFields = [
         placeholder: '请输入关键字',
     },
 ]
-
 const loading = ref(false)
 const selectedRow = ref([])
 const search = reactive({
@@ -84,7 +80,7 @@ const onAdd = () => {
 
 const batchCancelPunishment = () => { }
 
-const remoteSearchUser = () => {}
+const remoteSearchUser = () => { }
 const users = ref([])
 
 const getPunishmentList = () => {

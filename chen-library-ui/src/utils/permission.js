@@ -123,7 +123,7 @@ export const adminMenus = [
       icon: 'Setting',
       children: [
         {
-          title: '系统设置',
+          title: '基础设置',
           page: '/admin/setting/system',
           icon: 'Setting',
         },

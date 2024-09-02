@@ -2,22 +2,22 @@
     <div>
         <el-card shadow="never" class="search-card">
             <SearchForm :fields="searchFormFields" :loading="loading" :show-add="true" :show-delete="false"
-                :disabled-delete="selectedRow.length === 0" :default-search="search" @onAdd="onAdd" @onSearch="onSearch" />
+                :disabled-delete="selectedRow.length === 0" :default-search="search" @onAdd="onAdd"
+                @onSearch="onSearch" />
         </el-card>
         <el-card shadow="never" class="mgt-20px">
             <TableList :table-data="permissions" :fields="tableListFields" :show-actions="true" :show-view="false"
                 :loading="loading" :show-edit="true" :show-delete="false" :show-select="false" :actions-min-width="80"
                 @editRow="editRow" />
-        </el-card>
-        <el-card shadow="never" class="mgt-20px">
-            <div class="text-right">
+            <div class="mgt-20px text-right">
                 <el-pagination background :current-page="search.page" :page-sizes="[10, 20, 50, 100]"
                     :page-size="search.size" layout="total, sizes, prev, pager, next, jumper" :total="total"
                     @size-change="handleSizeChange" @current-change="handlePageChange">
                 </el-pagination>
             </div>
         </el-card>
-        <el-dialog :close-on-click-modal="false" :title="permission.id ? '编辑权限' : '新增权限'" width="640px" v-model="permissionFormVisible">
+        <el-dialog :close-on-click-modal="false" :title="permission.id ? '编辑权限' : '新增权限'" width="640px"
+            v-model="permissionFormVisible">
             <PermissionForm :init-permission="permission" @success="onSuccess" />
         </el-dialog>
     </div>
