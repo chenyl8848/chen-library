@@ -118,7 +118,7 @@ export const datetimePickerPunishmentShortcuts = [
     },
 ]
 
-export const documentStatusEnums = [
+export const documentStatusEnum = [
     { label: '待转换', value: 0, type: 'info' },
     { label: '转换中', value: 1, type: 'primary' },
     { label: '已转换', value: 2, type: 'success' },
@@ -129,7 +129,7 @@ export const documentStatusEnums = [
     { label: '审核拒绝', value: 7, type: 'danger' },
 ]
 
-export const articleStatusEnums = [
+export const articleStatusEnum = [
     { label: '待审核', value: 0, type: 'info' },
     { label: '审核通过', value: 1, type: 'success' },
     { label: '审核拒绝', value: 2, type: 'danger' },

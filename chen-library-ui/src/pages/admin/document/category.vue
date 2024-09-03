@@ -11,10 +11,10 @@
                 :tree-props="{ children: 'children' }" @selectRow="selectRow" @editRow="editRow"
                 @deleteRow="deleteRow" />
         </el-card>
-        <el-dialog :close-on-click-modal="false" :title="category.id ? '编辑分类' : '新增分类'" v-model="formVisible"
+        <el-dialog :close-on-click-modal="false" :title="category.id ? '编辑分类' : '新增分类'" v-model="categoryFormVisible"
             :width="'640px'">
             <CategoryForm ref="categoryForm" :init-category="category" :trees="categoryStore.categoryTree"
-                @success="categoryFormSuccess" />
+                @success="onSuccess" />
         </el-dialog>
     </div>
 </template>
@@ -45,7 +45,7 @@ const searchFormFields = [{
     ],
 }]
 const onAdd = () => {
-    formVisible.value = true
+    categoryFormVisible.value = true
 }
 const batchDelete = () => {
     console.log('batchDeletebatchDeletebatchDelete')
@@ -57,7 +57,7 @@ const selectedRow = ref([])
 const onSearch = (queryParams) => {
     search = { ...search, ...queryParams }
     console.log(queryParams, search)
-    getCategories()
+    getCategoryList()
 }
 
 const tableListFields = [
@@ -95,7 +95,8 @@ const selectRow = (rows) => {
 }
 
 const editRow = (row) => {
-    formVisible.value = true
+    categoryFormVisible.value = true
+    getCategory(row.id)
     category = reactive({...row})
 }
 
@@ -107,8 +108,7 @@ const deleteRow = (row) => {
 /**
  * 获取分类列表数据
  */
-const getCategories = () => {
-    console.log("getCategoriesgetCategories")
+const getCategoryList = () => {
     loading.value = true
     setTimeout(() => {
         loading.value = false
@@ -116,7 +116,7 @@ const getCategories = () => {
     }, 2000);
 }
 
-const formVisible = ref(false)
+const categoryFormVisible = ref(false)
 let category = {
     title: '',
     sort: 0,
@@ -125,14 +125,17 @@ let category = {
     icon: ''
 }
 
-const categoryFormSuccess = () => {
-    formVisible.value = false
-    getCategories()
+const getCategory = (id) => {
+    console.log(id)
+    category = reactive({})
+} 
+
+const onSuccess = () => {
+    categoryFormVisible.value = false
+    getCategoryList()
 }
 
 onMounted(() => {
-    getCategories()
+    getCategoryList()
 })
-
-
 </script>

@@ -1,6 +1,6 @@
 <template>
     <div class="password-form">
-        <el-form ref="formPassword" label-position="top" label-width="80px" :model="profile">
+        <el-form ref="passwordForm" label-position="top" label-width="80px" :model="profile">
             <el-form-item label="用户名">
                 <el-input v-model="profile.username" placeholder="请输入您的登录用户名" :disabled="true"></el-input>
             </el-form-item>
@@ -20,23 +20,26 @@
                 <el-input v-model="profile.repeat_password" type="password"></el-input>
             </el-form-item>
             <el-form-item>
-                <el-button type="primary" class="btn-block" icon="Check" @click="setPassword">修改密码</el-button>
+                <el-button type="primary" class="btn-block" icon="Check" @click="onsubmit(passwordForm)">修改密码</el-button>
             </el-form-item>
         </el-form>
     </div>
 </template>
 
 <script setup>
-import { reactive } from 'vue';
+import { reactive, ref, defineEmits } from 'vue';
 
 import useUserStore from '@/store/module/user'
 const userStore = useUserStore()
 
+const passwordForm = ref()
 const profile = reactive({...userStore.user})
-const setPassword = async (formEl) => {
+const $emits = defineEmits(['success'])
+const onsubmit = async (formEl) => {
     await formEl.validate((valid) => {
         if (valid) {
             console.log('submit!')
+            $emits('success')
         } else {
             console.log('error!')
         }

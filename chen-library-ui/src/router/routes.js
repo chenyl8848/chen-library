@@ -127,6 +127,10 @@ export default [
                     {
                         path: '/admin/article/recycle',
                         component: () => import("@/pages/admin/article/recycle.vue")
+                    },
+                    {
+                        path: '/admin/article/set',
+                        component: () => import("@/pages/admin/article/set.vue")
                     }
                 ]
             },

@@ -2,7 +2,7 @@
   <div class="setting-form">
     <el-form ref="settingForm" label-position="top" label-width="80px" :model="settings">
       <el-row :gutter="20">
-        <el-col v-for="(item, index) in settings" :key="'cfg-' + item.id" :span="item.col_num || 24">
+        <el-col v-for="(item, index) in settings" :key="`settings-${item.id}`" :span="item.col_num || 24">
           <el-form-item>
             <template #label>
               {{ item.label }}
@@ -13,12 +13,12 @@
             <el-input v-else-if="item.input_type === 'textarea'" v-model="settings[index]['value']" type="textarea"
               :placeholder="item.placeholder" rows="5"></el-input>
             <el-select v-else-if="item.input_type === 'select'" v-model="settings[index]['value']">
-              <el-option v-for="option in item.options.split('\n')" :key="'option-' + option"
+              <el-option v-for="option in item.options.split('\n')" :key="`option-${option}`"
                 :label="option.split(':')[1]" :value="option.split(':')[0]"></el-option>
             </el-select>
             <el-select v-else-if="item.input_type === 'select-multi'" v-model="settings[index]['value']" multiple
               clearable>
-              <el-option v-for="option in item.options.split('\n')" :key="'option-' + option"
+              <el-option v-for="option in item.options.split('\n')" :key="`option-${option}`"
                 :label="option.split(':')[1]" :value="option.split(':')[0]"></el-option>
             </el-select>
             <el-switch v-else-if="item.input_type === 'switch'" v-model="settings[index]['value']"
@@ -61,6 +61,8 @@ watch(() => $props.initSettings, (newValue) => {
       } catch (error) {
         console.log(error)
       }
+    } else if (item.input_type === 'number') {
+      item.value = Number(item.value)
     }
   })
   settings.value = tempSettings
@@ -97,7 +99,8 @@ const success = (res, index) => {
 }
 </script>
 <style lang="scss">
-.com-form-config {
+.setting-form {
+
   .el-form-item__label {
     padding-bottom: 0;
     line-height: 28px;

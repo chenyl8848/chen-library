@@ -78,7 +78,7 @@
 
 <script setup>
 import { defineProps, reactive, ref, computed, onMounted } from 'vue'
-import { datetimePickerShortcuts, articleStatusEnums } from '@/utils/enum'
+import { datetimePickerShortcuts, articleStatusEnum } from '@/utils/enum'
 import { formatDateTime, formatRelativeTime } from '@/utils/utils'
 import hooks from '@/hooks'
 import useUserStore from '@/store/module/user'
@@ -126,7 +126,7 @@ const pageChange = (page) => {
 
 const filterStatus = (status) => {
     const articleStatusOptionsMap = {}
-    articleStatusEnums.forEach(item => {
+    articleStatusEnum.forEach(item => {
         articleStatusOptionsMap[item.value] = item
     })
 

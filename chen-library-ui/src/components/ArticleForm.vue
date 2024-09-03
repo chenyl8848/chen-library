@@ -42,7 +42,7 @@
                     <!-- 审核状态 -->
                     <el-form-item label="审核状态">
                         <el-select v-model="article.status">
-                            <el-option v-for="item in articleStatusOptions" :key="'s-' + item.value" :label="item.label"
+                            <el-option v-for="item in articleStatusEnum" :key="'s-' + item.value" :label="item.label"
                                 :value="item.value"></el-option>
                         </el-select>
                     </el-form-item>
@@ -83,6 +83,7 @@
 
 <script setup>
 import { defineProps, reactive, ref } from 'vue'
+import { articleStatusEnum } from '@/utils/enum';
 
 defineProps({
     isAdmin: {

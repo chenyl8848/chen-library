@@ -27,7 +27,7 @@
                         { required: true, message: '请选择文档状态', trigger: 'change' },
                     ]">
                         <el-select v-model="document.status" filterable placeholder="请选择文档状态">
-                            <el-option v-for="item in documentStatusEnums" :key="`status-${item.value}`"
+                            <el-option v-for="item in documentStatusEnum" :key="`status-${item.value}`"
                                 :value="item.value" :label="item.label" :disabled="item.disabled"></el-option>
                         </el-select>
                     </el-form-item>
@@ -52,7 +52,7 @@
             </el-form-item>
 
             <el-form-item>
-                <el-button type="primary" class="btn-block" icon="Check" @click="setDocument(documentRef)">提交</el-button>
+                <el-button type="primary" class="btn-block" icon="Check" @click="updateDocument(documentRef)">提交</el-button>
             </el-form-item>
         </el-form>
     </div>
@@ -62,7 +62,7 @@
 import { defineProps, reactive, ref, watch, defineEmits } from 'vue'
 import useSettingStore from '@/store/module/setting'
 const settingStore = useSettingStore()
-import { documentStatusEnums } from '@/utils/enum'
+import { documentStatusEnum } from '@/utils/enum'
 
 const $props = defineProps({
     // 是否是管理员。如果是管理员，则可以更新文档的状态，如禁用等
@@ -120,7 +120,7 @@ const documentRules = reactive({
 })
 
 const $emit = defineEmits(['success']) 
-const setDocument = async (formEl) => {
+const updateDocument = async (formEl) => {
     await formEl.validate((valid) => {
         if (valid) {
             console.log('submit!')

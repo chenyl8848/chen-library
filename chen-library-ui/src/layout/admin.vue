@@ -47,7 +47,7 @@
         <el-button v-if="isCollapse" class="fold" icon="Expand" type="primary" link
           @click="isCollapse = false"></el-button>
         <el-button v-else class="fold" icon="Fold" type="primary" link @click="isCollapse = true"></el-button>
-        <el-dropdown style="float: right" trigger="click" @command="command">
+        <el-dropdown trigger="click" @command="command" class="float-right mgt-10px" size="large">
           <el-button>
             <el-icon>
               <User />
@@ -68,6 +68,12 @@
         <router-view></router-view>
       </el-main>
     </el-container>
+    <el-dialog title="个人资料" v-model="profileFormVisible" width="30%">
+      <ProfileForm @success="onSuccess" />
+    </el-dialog>
+    <el-dialog title="个人资料" v-model="passwordFormVisible" width="30%">
+      <PasswordForm @success="onSuccess" />
+    </el-dialog>
   </el-container>
 </template>
 
@@ -76,6 +82,8 @@ import { ref, watch } from 'vue'
 import { adminMenus } from '@/utils/permission'
 import useUserStore from '@/store/module/user'
 import { useRoute, useRouter } from 'vue-router'
+import ProfileForm from '@/components/ProfileForm.vue'
+import PasswordForm from '@/components/PasswordForm.vue'
 const userStore = useUserStore()
 const $router = useRouter()
 const $route = useRoute()
@@ -89,13 +97,38 @@ const goHome = () => {
 const activeMenu = ref('/admin/dashboard')
 const menus = adminMenus
 
-const command = (command) => {
-  console.log(command)
-}
 
 watch(() => $route, (newVal) => {
   activeMenu.value = newVal.path
 }, { deep: true, immediate: true })
+
+
+const profileFormVisible = ref(false)
+const passwordFormVisible = ref(false)
+const command = (command) => {
+  switch (command) {
+    case 'profile':
+      profileFormVisible.value = true
+      break
+    case 'password':
+      passwordFormVisible.value = true
+      break
+    case 'logout':
+      logout()
+      break
+  }
+}
+
+const logout = () => {
+  $router.push('/')
+}
+
+const onSuccess = () => {
+  profileFormVisible.value = false
+  passwordFormVisible.value = false
+}
+
+
 </script>
 
 <style lang="scss">

@@ -111,7 +111,7 @@
 
 <script setup>
 import { defineProps, reactive, ref, computed, onMounted } from 'vue'
-import { datetimePickerShortcuts, documentStatusEnums } from '@/utils/enum'
+import { datetimePickerShortcuts, documentStatusEnum } from '@/utils/enum'
 import { formatBytes, formatDateTime, formatRelativeTime } from '@/utils/utils'
 import hooks from '@/hooks'
 import useSettingStore from '@/store/module/setting'
@@ -185,7 +185,7 @@ const filterLanguage = (lang) => {
 
 const filterStatus = (status) => {
     const articleStatusOptionsMap = {}
-    documentStatusEnums.forEach(item => {
+    documentStatusEnum.forEach(item => {
         articleStatusOptionsMap[item.value] = item
     })
 

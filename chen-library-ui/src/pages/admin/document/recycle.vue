@@ -35,7 +35,7 @@
 import SearchForm from '@/components/SearchForm.vue'
 import TableList from '@/components/TableList.vue'
 import { onMounted, reactive, ref } from 'vue'
-import { documentStatusEnums } from '@/utils/enum'
+import { documentStatusEnum } from '@/utils/enum'
 
 const searchFormFields = [
     {
@@ -50,7 +50,7 @@ const searchFormFields = [
         name: 'status',
         placeholder: '请选择状态',
         multiple: true,
-        options: documentStatusEnums,
+        options: documentStatusEnum,
     },
     // 级联
     {
@@ -103,7 +103,7 @@ const tableListFields = [
         label: '状态',
         width: 120,
         type: 'enum',
-        enum: documentStatusEnums,
+        enum: documentStatusEnum,
     },
     {
         prop: 'category_name',

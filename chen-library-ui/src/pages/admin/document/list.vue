@@ -40,7 +40,7 @@
         <el-card shadow="never" class="mgt-20px">
             <TableList :loading="loading" :table-data="documents" :fields="tableListFields" :show-actions="true"
                 :show-view="false" :show-edit="true" :show-delete="true" :show-select="true" :actions-min-width="200"
-                @editRow="editRow" @viewRow="viewRow" @selectRow="selectRow" @deleteRow="deleteRow">
+                @editRow="editRow" @selectRow="selectRow" @deleteRow="deleteRow">
                 <template #actions="scope">
                     <el-tooltip v-if="scope.row.convert_error && scope.row.status === 3" effect="dark" placement="top">
                         <template #content>
@@ -67,20 +67,21 @@
                 </el-pagination>
             </div>
         </el-card>
-        <el-dialog :close-on-click-modal="false" title="编辑文档" width="640px" v-model="formVisible">
-            <FormUpdateDocument :category-trees="trees" :init-document="document" :is-admin="true"
-                @success="formSuccess" />
+        <el-dialog :close-on-click-modal="false" title="编辑文档" width="640px" v-model="documentUpdateFormVisible">
+            <DocumentUpdateForm :category-trees="categoryStore.categoryTree" :init-document="document" :is-admin="true"
+                @success="onSuccess" />
         </el-dialog>
-        <el-dialog :close-on-click-modal="false" title="批量分类" width="640px" v-model="formDocumentsCategoryVisible">
-            <FormUpdateDocumentsCategory v-if="formDocumentsCategoryVisible" :category-trees="trees"
-                :documents="categoryDocuments" @success="formSuccess" />
+        <el-dialog :close-on-click-modal="false" title="批量分类" width="640px"
+            v-model="updateDocumentsCategoryFormVisible">
+            <UpdateDocumentsCategoryForm :category-trees="categoryStore.categoryTree" :documents="selectedRow"
+                @success="onSuccess" />
         </el-dialog>
-        <el-dialog :close-on-click-modal="false" title="批量设置语言" width="640px" v-model="formDocumentsLanguageVisible">
-            <FormUpdateDocumentsLanguage v-if="formDocumentsLanguageVisible" :documents="languageDocuments"
-                @success="formSuccess" />
+        <el-dialog :close-on-click-modal="false" title="批量设置语言" width="640px"
+            v-model="updateDocumentsLanguageFormVisible">
+            <UpdateDocumentsLanguageForm :documents="selectedRow" @success="onSuccess" />
         </el-dialog>
-        <el-dialog :close-on-click-modal="false" title="推荐设置" v-model="formDocumentRecommendVisible" width="640px">
-            <FormDocumentRecommend :init-document="document" @success="formSuccess" />
+        <el-dialog :close-on-click-modal="false" title="推荐设置" v-model="documentRecommendFormVisible" width="640px">
+            <DocumentRecommendForm :init-document="document" @success="onSuccess" />
         </el-dialog>
     </div>
 </template>
@@ -88,10 +89,18 @@
 <script setup>
 import SearchForm from '@/components/SearchForm.vue'
 import TableList from '@/components/TableList.vue'
-import { documentStatusEnums, boolEnum } from '@/utils/enum'
+import UpdateDocumentsCategoryForm from './form/UpdateDocumentsCategoryForm.vue'
+import { documentStatusEnum, boolEnum } from '@/utils/enum'
 import { onMounted, reactive, ref } from 'vue'
 import { uploadDocumentList } from '../../../../mock/data'
+import { useRouter } from 'vue-router'
+import useCategoryStore from '@/store/module/category'
+import UpdateDocumentsLanguageForm from './form/UpdateDocumentsLanguageForm.vue'
+import DocumentUpdateForm from '@/components/DocumentUpdateForm.vue'
+import DocumentRecommendForm from './form/DocumentRecommendForm.vue'
+const categoryStore = useCategoryStore()
 
+const $router = useRouter()
 const searchFormFields = [
     {
         type: 'text',
@@ -105,7 +114,7 @@ const searchFormFields = [
         name: 'status',
         placeholder: '请选择状态',
         multiple: true,
-        options: documentStatusEnums,
+        options: documentStatusEnum,
     },
     {
         type: 'select',
@@ -141,10 +150,10 @@ const search = reactive({
 })
 
 const onSearch = () => {
-    getDcoumentList()
+    getDocumentList()
 }
 
-const getDcoumentList = () => {
+const getDocumentList = () => {
     loading.value = true
     setTimeout(() => {
         loading.value = false
@@ -153,12 +162,57 @@ const getDcoumentList = () => {
     }, 2000);
 }
 
-const onAdd = () => { }
+let document = reactive({})
+const getDocument = (id) => {
+    console.log(id)
+    document = reactive({})
+}
+
+const onAdd = () => {
+    $router.push({ path: '/upload' })
+}
+
 const onBatchDelete = () => { }
+
 const reconvertDocument = () => { }
+
 const checkDocument = () => { }
-const batchUpdateDocumentsCategory = () => { }
-const batchUpdateDocumentsLanguage = () => { }
+
+// 编辑文档
+const documentUpdateFormVisible = ref(false)
+const editRow = (row) => {
+    getDocument(row.id)
+    documentUpdateFormVisible.value = true
+}
+
+// 下载审核
+const download2review = () => { }
+
+// 批量更新文档分类
+const updateDocumentsCategoryFormVisible = ref(false)
+const batchUpdateDocumentsCategory = () => {
+    updateDocumentsCategoryFormVisible.value = true
+}
+
+// 批量更新文档语言
+const updateDocumentsLanguageFormVisible = ref(false)
+const batchUpdateDocumentsLanguage = () => {
+    updateDocumentsLanguageFormVisible.value = true
+}
+
+// 推荐文档
+const documentRecommendFormVisible = ref(false)
+const recommendDocument = (row) => {
+    getDocument(row.id)
+    documentRecommendFormVisible.value = true
+ }
+
+const onSuccess = () => {
+    documentUpdateFormVisible.value = false
+    updateDocumentsCategoryFormVisible.value = false
+    updateDocumentsLanguageFormVisible.value = false
+    documentRecommendFormVisible.value = false
+}
 
 const tableListFields = [
     // { prop: 'id', label: 'ID', width: 80, type: 'number', fixed: 'left' },
@@ -200,24 +254,22 @@ const tableListFields = [
     { prop: 'comment_count', label: '评论', width: 70, type: 'number' },
     { prop: 'keywords', label: '关键字', minWidth: 200 },
     // { prop: 'description', label: '摘要', minWidth: 200 },
-    { prop: 'created_at', label: '创建时间', width: 160, type: 'datetime' },
-    { prop: 'updated_at', label: '更新时间', width: 160, type: 'datetime' },
+    { prop: 'created_at', label: '创建时间', width: 180, type: 'datetime' },
+    { prop: 'updated_at', label: '更新时间', width: 180, type: 'datetime' },
     {
         prop: 'recommend_at',
         label: '推荐时间',
-        width: 160,
+        width: 180,
         type: 'datetime',
     },
 ]
 const documents = ref([])
 const total = ref(0)
 
-const viewRow = () => { }
 const deleteRow = () => { }
-const editRow = () => { }
-const selectRow = () => { }
-const recommendDocument = () => { }
-const download2review = () => { }
+const selectRow = (rows) => {
+    selectedRow.value = rows
+}
 
 const handleSizeChange = (pageSize) => {
     search.pageSize = pageSize
@@ -229,6 +281,6 @@ const handlePageChange = (page) => {
 }
 
 onMounted(() => {
-    getDcoumentList()
+    getDocumentList()
 })
 </script>

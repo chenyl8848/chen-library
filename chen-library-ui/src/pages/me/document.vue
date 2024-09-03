@@ -115,7 +115,7 @@
 <script setup>
 import { onMounted, reactive, ref } from 'vue'
 import { uploadDocumentList, documentValue } from '../../../mock/data'
-import { datetimePickerShortcuts, documentStatusEnums } from '@/utils/enum'
+import { datetimePickerShortcuts, documentStatusEnum } from '@/utils/enum'
 import DocumentUpdateForm from '@/components/DocumentUpdateForm.vue'
 import hooks from '@/hooks'
 const { isMobile } = hooks()
@@ -173,7 +173,7 @@ const filterLanguage = (lang) => {
 
 const filterStatus = (status) => {
     const articleStatusOptionsMap = {}
-    documentStatusEnums.forEach(item => {
+    documentStatusEnum.forEach(item => {
         articleStatusOptionsMap[item.value] = item
     })
 

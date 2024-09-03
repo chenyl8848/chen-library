@@ -83,7 +83,7 @@
 import { onMounted, reactive, ref } from 'vue';
 import { articleList } from '../../../mock/data'
 import { formatDateTime, formatRelativeTime } from '@/utils/utils'
-import { datetimePickerShortcuts, articleStatusEnums } from '@/utils/enum'
+import { datetimePickerShortcuts, articleStatusEnum } from '@/utils/enum'
 import hooks from '@/hooks'
 const { isMobile } = hooks()
 
@@ -120,7 +120,7 @@ const pageChange = (page) => {
 
 const filterStatus = (status) => {
     const articleStatusOptionsMap = {}
-    articleStatusEnums.forEach(item => {
+    articleStatusEnum.forEach(item => {
         articleStatusOptionsMap[item.value] = item
     })
 
