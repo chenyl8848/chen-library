@@ -76,7 +76,18 @@ export default [
 
                 ]
             },
-
+            {
+                path: '/login',
+                component: () => import('@/pages/login/index.vue')
+            },
+            {
+                path: '/register',
+                component: () => import('@/pages/register/index.vue')
+            },
+            {
+                path: '/findpassword',
+                component: () => import('@/pages/findpassword/index.vue')
+            },
         ]
     },
     {
