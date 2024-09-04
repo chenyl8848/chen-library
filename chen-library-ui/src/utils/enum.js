@@ -349,5 +349,36 @@ export const attachmentTypeEnum = [
     { label: '轮播图', value: 5 },
     { label: '分类封面', value: 6 },
     { label: '配置', value: 7 },
-  ]
+]
+
+export const searchExtEnum = [
+    { label: '全部格式', value: 'all' },
+    { label: 'PDF', value: 'pdf' },
+    { label: 'DOC', value: 'doc' },
+    { label: 'PPT', value: 'ppt' },
+    { label: 'XLS', value: 'xls' },
+    { label: 'TXT', value: 'txt' },
+    { label: '其他', value: 'other' },
+]
+
+export const searchSortEnum = [
+    { label: '默认排序', value: 'default' },
+    { label: '最新排序', value: 'latest' },
+    { label: '页数排序', value: 'pages' },
+    // { label: '评分排序', value: 'score' },
+    { label: '大小排序', value: 'size' },
+    // { label: '下载排序', value: 'download_count' },
+    // { label: '浏览排序', value: 'view_count' },
+    // { label: '收藏排序', value: 'favorite_count' },
+]
+
+export const searchDurationEnum = [
+    { label: '全部时间', value: 'all' },
+    { label: '最近一天', value: 'day' },
+    { label: '最近一周', value: 'week' },
+    { label: '最近一个月', value: 'month' },
+    { label: '最近三个月', value: 'three_month' },
+    { label: '最近半年', value: 'half_year' },
+    { label: '最近一年', value: 'year' },
+]
 

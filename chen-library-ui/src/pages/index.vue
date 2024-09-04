@@ -196,8 +196,9 @@
                                     </router-link>
                                 </div>
                             </template>
-                            <router-link v-for="item in category.children" :to="`/category/document?categoryId=${item.id}`"
-                                :key="`category-child-${item.id}`" class="el-link el-link--default">
+                            <router-link v-for="item in category.children"
+                                :to="`/category/document?categoryId=${item.id}`" :key="`category-child-${item.id}`"
+                                class="el-link el-link--default">
                                 {{ item.title }}
                             </router-link>
                         </el-card>
@@ -214,7 +215,8 @@
                             <strong>
                                 {{ item.category_name }}
                             </strong>
-                            <router-link :to="`/category/document?categoryId=${item.category_id}`" target="_blank" class="float-right">
+                            <router-link :to="`/category/document?categoryId=${item.category_id}`" target="_blank"
+                                class="float-right">
                                 <el-button link type="primary">更多</el-button>
                             </router-link>
                         </div>
@@ -259,14 +261,17 @@ import useUserStore from '@/store/module/user'
 import useCategoryStore from '@/store/module/category'
 import { computed, ref } from 'vue'
 import { articleList, recommendDocumentList, frontDocumentList } from '../../mock/data'
+import { useRouter } from 'vue-router'
 
 const settingStore = useSettingStore()
 const userStore = useUserStore()
 const categoryStore = useCategoryStore()
 
+
+const $router = useRouter()
 const searchText = ref('')
 const onSearch = () => {
-
+    $router.push({ path: 'search', query: { keyword: searchText.value } })
 }
 
 // 今日签到

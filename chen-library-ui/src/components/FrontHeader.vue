@@ -1,5 +1,5 @@
 <template>
-    <div class="front-header">
+    <div class="front-header" v-if="!$route.path.includes('search')">
         <template v-if="advertisements.length > 0">
             <div v-for="item in advertisements" :key="`header-ad-${item.id}`">
                 <div v-if="item.position === 'global_top'" :key="item.position + item.id" v-html="item.content">
@@ -7,7 +7,7 @@
             </div>
         </template>
 
-        <el-header v-if="$route.name !== 'search'">
+        <el-header>
             <div>
                 <el-menu :defaultPath="activePath" mode="horizontal" class="float-left">
                     <el-menu-item class="logo" index="/">
