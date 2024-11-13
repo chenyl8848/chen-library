@@ -1,7 +1,8 @@
-package com.codechen.library;
+package com.codechen.library.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 /**
  * @author：Java陈序员
@@ -9,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @description：主启动类
  */
 @SpringBootApplication
+@ComponentScan(basePackages = {"com.codechen.library.framework", "com.codechen.library.api.controller"})
 public class Application {
 
     public static void main(String[] args) {

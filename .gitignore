@@ -21,4 +21,5 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
-/chen-library-ui/target/
+/chen-library-api/target/
+/chen-library-generator/target/

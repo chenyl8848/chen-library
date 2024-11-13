@@ -14,8 +14,8 @@
             <el-link :underline="false" target="_blank" title="站点地图" href="/sitemap.xml">站点地图</el-link>
         </div>
         <div>
-            <el-link v-if="settingStore.system.domain" :underline="false" :title="settingStore.system.sitename || ''"
-                :href="settingStore.system.domain">
+            <el-link v-if="settingStore.system.com.codechen.library.api.domain" :underline="false" :title="settingStore.system.sitename || ''"
+                :href="settingStore.system.com.codechen.library.api.domain">
                 {{ settingStore.system.sitename }}
             </el-link>
             <span class="copyright-year"><span v-if="settingStore.system.copyright_start_year == currentYear">©{{

@@ -31,7 +31,7 @@ const loadSetting = () => {
             {
                 "id": 11,
                 "label": "【重要】网站域名",
-                "name": "domain",
+                "name": "com.codechen.library.api.domain",
                 "value": "https://moredoc.mnt.ltd",
                 "placeholder": "请输入您网站的域名访问地址，如 https://moredoc.mnt.ltd，带 https:// 或 http:// 。用以生成网站地图sitemap、支付回调等",
                 "input_type": "text",

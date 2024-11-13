@@ -1,0 +1,25 @@
+server:
+  port: 7080
+
+spring:
+  freemarker:
+    suffix: .ftl
+    request-context-attribute: request
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://8.134.196.104:3306/moredoc
+    username: moredoc
+    password: moredoc@1024
+
+generator:
+  package-name: com.codechen.library.api
+  ignore-table-prefix: true
+  table-prefix: mnt
+  author: Java陈序员
+  enable-swagger: false
+#  base-entity: com.codechen.library.framework.domain.AbstractEntity
+  common-result: com.codechen.library.framework.domain.Result
+  ignore-column: created_at
+#  entity-suffix: ''
+#  mapper-suffix: Dao
+#  create-time: "2024-12-12 15:17:42"

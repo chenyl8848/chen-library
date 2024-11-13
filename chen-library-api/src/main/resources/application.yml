@@ -1,0 +1,9 @@
+server:
+  port: 7070
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://8.134.196.104:3306/moredoc
+    username: moredoc
+    password: moredoc@1024

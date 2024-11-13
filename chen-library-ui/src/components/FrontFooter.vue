@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div>
-                <el-link v-if="settingStore.system.domain" :underline="false" :href="settingStore.system.domain">
+                <el-link v-if="settingStore.system.com.codechen.library.api.domain" :underline="false" :href="settingStore.system.com.codechen.library.api.domain">
                     {{ settingStore.system.sitename }}
                 </el-link>
                 <span class="copyright-year">
